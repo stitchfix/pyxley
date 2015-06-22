@@ -1,6 +1,6 @@
 # Pyxley
 
-The Pyxley python library makes use of the Pyxley.js React components to create Flask-based web applications. Through the use of the PyReact library, we can use Jinja templating to construct and transform a single React component. The specific UI components are passed as props to the parent component. A simpler interface is provide through the use of specific wrappers for each of the component types.
+The Pyxley python library makes use of the [pyxleyJS](https://github.com/stitchfix/pyxleyJS) React components to create Flask-based web applications. Through the use of the PyReact library, we can use Jinja templating to construct and transform a single React component. The specific UI components are passed as props to the parent component. A simpler interface is provide through the use of specific wrappers for each of the component types.
 
 An example of the Jinja template for a single React component is presented below.
 ```python
@@ -18,34 +18,15 @@ An example of the Jinja template for a single React component is presented below
 
 By constructing the template in this way, the developer can easily integrate a custom React component. The only requirements are the props, elementId, and location of the React component.
 
-## UIComponent
-The React components in Pixley.js were designed to retrieve data from an API. For this library, we have chosen Flask. As such, Flask specific classes have been written to simplify the creation of components. Each component must have a type, options, and a route from which the data will be retrieved. The base class for these components is presented below. Each component packages the parameters in a dict and has the ability to register an url with the Flask app.
-
-```python
-class UIComponent(object):
-    """
-    """
-    def __init__(self, component_type, options, route_func):
-        """"""
-        self.params = {
-            "type": component_type,
-            "options": options
-        }
-        self.route_func = route_func
-
-    def register_route(self, app):
-        """"""
-        if "url" not in self.params["options"]:
-            raise Exception("Component does not have a URL property")
-
-        if not hasattr(self.route_func, "__call__"):
-            raise Exception("No app route function supplied")
-
-        app.add_url_rule(self.params["options"]["url"],
-            self.params["options"]["url"],
-            self.route_func)
-        app.view_functions[self.params["options"]["url"]] = self.route_func
+## Installation
+Install via pip
 ```
+pip install pyxley
+```
+
+## metricsgraphics.js Example
+An example flask app has been included. It demonstrates how to add a filter and several charts.
+
 
 ## Filters & Charts
 Each Filter and Chart inherits from the base UIComponent class. Wrappers have been written to provide a clearer interface. An example of a “SelectButton” is provided below. The user only specifies the options, while the type is set by the implementation.
