@@ -30,4 +30,4 @@ class LineChart(MG):
                     "x": row[self.x],
                     "y": row[yy]
                     })
-        return {"result":  [values[k] for k in self.y], "date": str(self.timeseries).lower()}
+        return {"result":  [values[k] for k in self.y], "date": self.timeseries}
