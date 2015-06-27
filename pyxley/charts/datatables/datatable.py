@@ -13,10 +13,10 @@ class DataTable(Chart):
             "id": table_id,
             "url": url,
             "table_options": {
-                "paging": str(paging).lower(),
-                "searching": str(searching).lower(),
-                "scrollX": str(scroll_x).lower(),
-                "bSort": str(sortable).lower(),
+                "paging": paging,
+                "searching": searching,
+                "scrollX": scroll_x,
+                "bSort": sortable,
                 "dom": dom
             }
         }
