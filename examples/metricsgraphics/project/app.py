@@ -74,7 +74,7 @@ hFig.layout.set_size(width=450, height=200)
 hFig.layout.set_margin(left=40, right=40)
 hFig.graphics.animate_on_load()
 # Make a histogram with 20 bins
-hc = Histogram(hf, hFig, "value", 20, init_params={"Data": "Steps"})
+hc = Histogram(bf, hFig, "value", 20, init_params={"Data": "Steps"})
 ui.add_chart(hc)
 
 # Let's play with our input
