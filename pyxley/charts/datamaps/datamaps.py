@@ -55,13 +55,13 @@ _COLOR_MAP = {
 }
 
 class Datamap(Chart):
-    def __init__(self, chart_id, url, params, data_source):
+    def __init__(self, chart_id, url, params, api_route):
         opts = {
             "url": url,
             "chartid": chart_id,
             "params": params
         }
-        super(Datamap, self).__init__("Datamaps", opts, data_source.api_route)
+        super(Datamap, self).__init__("Datamaps", opts, api_route)
 
 class DatamapUSA(Datamap):
     def __init__(self, url, chart_id, data_source, params,
@@ -72,8 +72,11 @@ class DatamapUSA(Datamap):
         self.fills = color_map
         self.fills["defaultFills"] = "black"
 
-        data_source.to_json = self.to_json
-        super(DatamapUSA, self).__init__(chart_id, url, params, data_source)
+        def get_data():
+            return jsonify(self.to_json(
+                    data_source._apply_filters(request.args)
+                ))
+        super(DatamapUSA, self).__init__(chart_id, url, params, get_data)
 
     def to_json(self, df):
         records = {}

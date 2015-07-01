@@ -1,13 +1,13 @@
 from ..charts import Chart
 
 class MG(Chart):
-    def __init__(self, chart_id, url, params, data_source):
+    def __init__(self, chart_id, url, params, api_route):
         opts = {
             "url": url,
             "chart_id": chart_id,
             "params": params
         }
-        super(MG, self).__init__("MetricsGraphics", opts, data_source.api_route)
+        super(MG, self).__init__("MetricsGraphics", opts, api_route)
 
 class OptionHelper(object):
     def __init__(self):

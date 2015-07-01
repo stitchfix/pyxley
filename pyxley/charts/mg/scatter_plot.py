@@ -17,9 +17,14 @@ class ScatterPlot(MG):
         figure.graphics.target("#"+figure.chart_id)
         for k, v in figure.get().items():
             self.plot_opts[k] = v
-        data_source.to_json = self.to_json
+
+        def get_data():
+            return jsonify(self.to_json(
+                    data_source._apply_filters(request.args)
+                ))
+
         super(ScatterPlot, self).__init__(figure.chart_id, figure.url,
-            self.plot_opts, data_source)
+            self.plot_opts, get_data)
 
     def to_json(self, df):
         values = []
