@@ -31,7 +31,6 @@ class DataTable(Chart):
                     data_source._apply_filters(request.args)
                 ))
 
-        data_source.to_json = self.to_json
         super(DataTable, self).__init__("Table", opts, get_data)
 
     def format_row(self, row, bounds):
