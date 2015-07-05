@@ -28,7 +28,7 @@ class DataTable(Chart):
 
         def get_data():
             return jsonify(self.to_json(
-                    data_source._apply_filters(request.args)
+                    data_source.apply_filters(request.args)
                 ))
 
         super(DataTable, self).__init__("Table", opts, get_data)

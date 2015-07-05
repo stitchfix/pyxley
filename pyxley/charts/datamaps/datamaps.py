@@ -74,7 +74,7 @@ class DatamapUSA(Datamap):
 
         def get_data():
             return jsonify(self.to_json(
-                    data_source._apply_filters(request.args)
+                    data_source.apply_filters(request.args)
                 ))
         super(DatamapUSA, self).__init__(chart_id, url, params, get_data)
 

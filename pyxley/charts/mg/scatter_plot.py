@@ -20,7 +20,7 @@ class ScatterPlot(MG):
 
         def get_data():
             return jsonify(self.to_json(
-                    data_source._apply_filters(request.args)
+                    data_source.apply_filters(request.args)
                 ))
 
         super(ScatterPlot, self).__init__(figure.chart_id, figure.url,
