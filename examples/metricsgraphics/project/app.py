@@ -55,7 +55,7 @@ cols = [c for c in df.columns if c != "Date"]
 btn = SelectButton("Data", cols, "Data", "Steps")
 
 # Make a FilterFrame and add the button to the UI
-bf = FilterFrame(sf, columns=["Data"])
+ff = FilterFrame(sf, columns=["Data"])
 ui.add_filter(btn)
 
 # Make a Figure, add some settings, make a line plot
@@ -64,17 +64,16 @@ fig.graphics.transition_on_update(True)
 fig.graphics.animate_on_load()
 fig.layout.set_size(width=450, height=200)
 fig.layout.set_margin(left=40, right=40)
-lc = LineChart(bf, fig, "Date", ["value"], init_params={"Data": "Steps"}, timeseries=True)
+lc = LineChart(ff, fig, "Date", ["value"], init_params={"Data": "Steps"}, timeseries=True)
 ui.add_chart(lc)
 
 # Now make a FilterFrame for the histogram
-hf = FilterFrame(sf, columns=["Data"])
 hFig = Figure("/mghist/", "myhist")
 hFig.layout.set_size(width=450, height=200)
 hFig.layout.set_margin(left=40, right=40)
 hFig.graphics.animate_on_load()
 # Make a histogram with 20 bins
-hc = Histogram(bf, hFig, "value", 20, init_params={"Data": "Steps"})
+hc = Histogram(ff, hFig, "value", 20, init_params={"Data": "Steps"})
 ui.add_chart(hc)
 
 # Let's play with our input
