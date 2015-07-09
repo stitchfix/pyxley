@@ -2,7 +2,7 @@
 from mg import MG
 
 class ScatterPlot(MG):
-    def __init__(self, data_source, figure, x, y, title="Scatter Plot",
+    def __init__(self, df, figure, x, y, title="Scatter Plot",
         description="Scatter Plot", init_params={}):
         self.x = x
         self.y = y
@@ -19,10 +19,15 @@ class ScatterPlot(MG):
             self.plot_opts[k] = v
 
         def get_data():
+            args = {}
+            for c in init_params:
+                if request.args.get(c):
+                    args[c] = request.args[c]
+                else:
+                    args[c] = init_params[c]
             return jsonify(self.to_json(
-                    data_source.apply_filters(request.args)
+                    self.apply_filters(df, args)
                 ))
-
         super(ScatterPlot, self).__init__(figure.chart_id, figure.url,
             self.plot_opts, get_data)
 

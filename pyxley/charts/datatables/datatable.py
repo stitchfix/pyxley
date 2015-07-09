@@ -2,7 +2,7 @@ from ..charts import Chart
 from flask import jsonify, request
 
 class DataTable(Chart):
-    def __init__(self, table_id, url, data_source, columns={}, init_params={},
+    def __init__(self, table_id, url, df, columns={}, init_params={},
         paging=False, searching=False, sortable=False, classname="display", **kwargs):
 
         opts = {
@@ -27,10 +27,15 @@ class DataTable(Chart):
                 self.confidence[k] = v["confidence"]
 
         def get_data():
+            args = {}
+            for c in init_params:
+                if request.args.get(c):
+                    args[c] = request.args[c]
+                else:
+                    args[c] = init_params[c]
             return jsonify(self.to_json(
-                    data_source.apply_filters(request.args)
+                    self.apply_filters(df, args)
                 ))
-
         super(DataTable, self).__init__("Table", opts, get_data)
 
     def format_row(self, row, bounds):

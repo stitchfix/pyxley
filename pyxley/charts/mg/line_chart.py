@@ -2,7 +2,7 @@ from mg import MG
 from flask import jsonify, request
 
 class LineChart(MG):
-    def __init__(self, data_source, figure, x, y, title="Line Chart",
+    def __init__(self, df, figure, x, y, title="Line Chart",
         description="Line Chart", init_params={}, timeseries=False):
 
         self.x = x
@@ -20,8 +20,14 @@ class LineChart(MG):
             self.plot_opts[k] = v
 
         def get_data():
+            args = {}
+            for c in init_params:
+                if request.args.get(c):
+                    args[c] = request.args[c]
+                else:
+                    args[c] = init_params[c]
             return jsonify(self.to_json(
-                    data_source.apply_filters(request.args)
+                    self.apply_filters(df, args)
                 ))
 
         super(LineChart, self).__init__(figure.chart_id, figure.url, self.plot_opts, get_data)
