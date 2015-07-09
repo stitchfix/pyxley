@@ -1,0 +1,26 @@
+  #new_chart svg {
+    height: 400px;
+    width: 100%;
+  }
+
+.nvd3.multiChart .axis .nv-axis line {
+  stroke: none;
+  fill: none;
+}
+
+.nvd3.line .nv-y .nv-axis line {
+  stroke: none;
+  fill: none;
+}
+  .nvd3 g.nv-groups path.nv-line {
+    stroke-width: 3px;
+  }
+
+.nv-y2 .nv-axis .tick {
+  opacity: 0 !important;
+}
+
+body {
+  font-style:normal;
+  font-family:"BrandonText-Regular", sans-serif;
+}
