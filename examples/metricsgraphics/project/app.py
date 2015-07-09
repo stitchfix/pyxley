@@ -11,7 +11,6 @@ from pyxley import UILayout
 from pyxley.filters import SelectButton
 from pyxley.charts.mg import LineChart, Figure, ScatterPlot, Histogram
 from pyxley.charts.datatables import DataTable
-from pyxley.utils import FilterFrame
 from collections import OrderedDict
 
 parser = argparse.ArgumentParser(description="Flask Template")
@@ -55,7 +54,6 @@ cols = [c for c in df.columns if c != "Date"]
 btn = SelectButton("Data", cols, "Data", "Steps")
 
 # Make a FilterFrame and add the button to the UI
-ff = FilterFrame(sf, columns=["Data"])
 ui.add_filter(btn)
 
 # Make a Figure, add some settings, make a line plot
@@ -64,7 +62,7 @@ fig.graphics.transition_on_update(True)
 fig.graphics.animate_on_load()
 fig.layout.set_size(width=450, height=200)
 fig.layout.set_margin(left=40, right=40)
-lc = LineChart(ff, fig, "Date", ["value"], init_params={"Data": "Steps"}, timeseries=True)
+lc = LineChart(sf, fig, "Date", ["value"], init_params={"Data": "Steps"}, timeseries=True)
 ui.add_chart(lc)
 
 # Now make a FilterFrame for the histogram
@@ -73,7 +71,7 @@ hFig.layout.set_size(width=450, height=200)
 hFig.layout.set_margin(left=40, right=40)
 hFig.graphics.animate_on_load()
 # Make a histogram with 20 bins
-hc = Histogram(ff, hFig, "value", 20, init_params={"Data": "Steps"})
+hc = Histogram(sf, hFig, "value", 20, init_params={"Data": "Steps"})
 ui.add_chart(hc)
 
 # Let's play with our input
@@ -100,8 +98,7 @@ cols = OrderedDict([
     ("Distance", {"label": "Distance (mi)", "format": "%5.2f"})
 ])
 
-tf = FilterFrame(gf)
-tb = DataTable("mytable", "/mytable/", tf, columns=cols, paging=True, pageLength=5)
+tb = DataTable("mytable", "/mytable/", gf, columns=cols, paging=True, pageLength=5)
 ui.add_chart(tb)
 
 app = Flask(__name__)

@@ -1,4 +1,6 @@
 # metricsgraphics.js Example
+This example showcases the integration of the [metricsgraphics.js](http://metricsgraphicsjs.org/)
+library for time-series data.
 
 # How to Install
 Make sure pyxley is installed first (run `python setup.py install`).
