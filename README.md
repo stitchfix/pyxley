@@ -2,6 +2,8 @@
 
 The Pyxley python library makes use of the [pyxleyJS](https://github.com/stitchfix/pyxleyJS) React components to create Flask-based web applications. Through the use of the PyReact library, we can use Jinja templating to construct and transform a single React component. The specific UI components are passed as props to the parent component. A simpler interface is provide through the use of specific wrappers for each of the component types.
 
+<img src="http://multithreaded.stitchfix.com/assets/images/blog/pyxley_examples_grid.png">
+
 An example of the Jinja template for a single React component is presented below.
 ```python
     _react = (
