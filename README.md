@@ -20,6 +20,12 @@ An example of the Jinja template for a single React component is presented below
 
 By constructing the template in this way, the developer can easily integrate a custom React component. The only requirements are the props, elementId, and location of the React component.
 
+## Documentation and Testing
+Coming Soon!
+
+## Python versions
+Currently only Python 2.7 is supported. Support for other versions coming soon.
+
 ## Installation
 Install via pip
 ```
@@ -52,5 +58,6 @@ The UILayout class is designed to integrate the filters and charts with the Flas
 
 ## Pandas Integration
 This library is built with the pandas dataframe in mind. That is, we expect the data to be some sort of structured data that’s easy to filter and easy to plot. Each Javascript charting library has it’s own expected format for the data which makes integration with python challenging. Included in this library are several helper functions that format the data in the way the Javascript libraries are expecting.
+
 
 
