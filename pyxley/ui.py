@@ -1,4 +1,4 @@
-from react_template import ReactComponent
+from .react_template import ReactComponent
 
 class UIComponent(object):
     """

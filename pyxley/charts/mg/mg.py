@@ -22,7 +22,7 @@ class OptionHelper(object):
         try:
             int_value = int(value)
         except ValueError as err:
-            print err.args
+            print(err.args)
 
         self.options[option] = value
 

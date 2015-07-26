@@ -30,7 +30,7 @@ def format_props(props):
     """
     vars_ = []
     props_ = []
-    for k, v in props.items():
+    for k, v in list(props.items()):
         if isinstance(v, bool):
             vars_.append(Template("var {{k}} = {{v|lower}};").render(k=k,v=v))
         else:
@@ -60,7 +60,7 @@ class ReactComponent(ReactTemplate):
             "props": props_,
             "id": element_id
         }
-        for k, v in props.items():
+        for k, v in list(props.items()):
             params[k] = v
 
         super(ReactComponent, self).__init__(

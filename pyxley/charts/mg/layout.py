@@ -1,4 +1,4 @@
-from mg import OptionHelper
+from .mg import OptionHelper
 
 class Layout(OptionHelper):
     _allowed_layout = [
@@ -29,4 +29,4 @@ class Layout(OptionHelper):
         self.set_integer("small_width_threshold", width_threshold)
 
     def get(self):
-        return {k:v for k,v in self.options.items() if k in self._allowed_layout}
+        return {k:v for k,v in list(self.options.items()) if k in self._allowed_layout}

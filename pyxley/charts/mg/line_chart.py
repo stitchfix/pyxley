@@ -1,4 +1,4 @@
-from mg import MG
+from .mg import MG
 from flask import jsonify, request
 
 class LineChart(MG):
@@ -16,7 +16,7 @@ class LineChart(MG):
             "init_params": init_params
         }
         self.timeseries = timeseries
-        for k, v in figure.get().items():
+        for k, v in list(figure.get().items()):
             self.plot_opts[k] = v
 
         def get_data():

@@ -1,6 +1,6 @@
-from axes import Axes
-from layout import Layout
-from graphic import Graphic
+from .axes import Axes
+from .layout import Layout
+from .graphic import Graphic
 
 class Figure(object):
     def __init__(self, url, chart_id):
@@ -13,7 +13,7 @@ class Figure(object):
     def get(self):
         options = {}
         for x in [self.axes, self.graphics, self.layout]:
-            for k, v in x.get().items():
+            for k, v in list(x.get().items()):
                 options[k] = v
 
         return options

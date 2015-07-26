@@ -8,7 +8,7 @@ class Chart(UIComponent):
     @staticmethod
     def apply_filters(df, filters):
         idx = pd.Series([True]*df.shape[0])
-        for k, v in filters.items():
+        for k, v in list(filters.items()):
             if k not in df.columns:
                 continue
             idx &= (df[k] == v)
