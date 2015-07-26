@@ -1,5 +1,6 @@
 from react import jsx
 from jinja2 import Template
+import json
 
 class ReactTemplate(object):
     """
@@ -13,7 +14,7 @@ class ReactTemplate(object):
     def write_to_file(self, s):
         """
         """
-        f = open(self.path, 'wb')
+        f = open(self.path, 'w')
         f.write(s)
         f.close()
 
@@ -30,7 +31,10 @@ def format_props(props):
     vars_ = []
     props_ = []
     for k, v in props.items():
-        vars_.append(Template("var {{k}} = {{v}};").render(k=k,v=v))
+        if isinstance(v, bool):
+            vars_.append(Template("var {{k}} = {{v|lower}};").render(k=k,v=v))
+        else:
+            vars_.append(Template("var {{k}} = {{v}};").render(k=k,v=v))
         props_.append(Template("{{k}} = {{v}}").render(k=k, v="{"+k+"}"))
     return "\n".join(vars_), "\n".join(props_)
 

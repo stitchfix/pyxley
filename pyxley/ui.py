@@ -67,7 +67,7 @@ class UILayout(object):
         if self.charts:
             props["charts"] = [c.params for c in self.charts]
 
-        props["dynamic"] = str(self.dynamic).lower()
+        props["dynamic"] = self.dynamic
         props["filter_style"] = self.filter_style
         return props
 

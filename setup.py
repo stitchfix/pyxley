@@ -1,8 +1,8 @@
-from distutils.core import setup
+from setuptools import setup
 
 setup(
     name='pyxley',
-    version='0.0.1',
+    version='0.0.3',
     author='Nicholas Kridler',
     author_email='nmkridler@gmail.com',
     license='MIT',
@@ -18,6 +18,6 @@ setup(
     install_requires=[
         'pyreact',
         'flask',
-        'pandas>=0.13.1'
+        'pandas'
     ]
 )
