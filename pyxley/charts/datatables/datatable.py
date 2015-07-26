@@ -1,6 +1,9 @@
 from ..charts import Chart
 from flask import jsonify, request
 
+"""
+    Wrapper for jquery Datatables
+"""
 class DataTable(Chart):
     def __init__(self, table_id, url, df, columns={}, init_params={},
         paging=False, searching=False, sortable=False, classname="display", **kwargs):
@@ -17,12 +20,12 @@ class DataTable(Chart):
             }
         }
 
-        for k, v in kwargs.items():
+        for k, v in list(kwargs.items()):
             opts["table_options"][k] = v
 
         self.columns = columns
         self.confidence = {}
-        for k, v in self.columns.items():
+        for k, v in list(self.columns.items()):
             if "confidence" in v:
                 self.confidence[k] = v["confidence"]
 
@@ -55,7 +58,7 @@ class DataTable(Chart):
     def to_json(self, df):
         records = []
 
-        display_cols = self.columns.keys()
+        display_cols = list(self.columns.keys())
         if not display_cols:
             display_cols = list(df.columns)
 

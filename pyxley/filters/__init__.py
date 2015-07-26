@@ -1,4 +1,4 @@
-import filters
+from . import filters
 
 Filter = filters.Filter
 DownloadButton = filters.DownloadButton

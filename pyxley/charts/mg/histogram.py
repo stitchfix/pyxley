@@ -1,5 +1,5 @@
 
-from mg import MG
+from .mg import MG
 from flask import jsonify, request
 
 class Histogram(MG):
@@ -14,7 +14,7 @@ class Histogram(MG):
         }
         figure.graphics.chart_type("histogram")
         figure.graphics.target("#"+figure.chart_id)
-        for k, v in figure.get().items():
+        for k, v in list(figure.get().items()):
             self.plot_opts[k] = v
 
         def get_data():

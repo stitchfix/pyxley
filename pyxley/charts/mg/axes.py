@@ -1,4 +1,4 @@
-from mg import OptionHelper
+from .mg import OptionHelper
 
 class Axes(OptionHelper):
     _allowed_axes = [
@@ -113,5 +113,5 @@ class Axes(OptionHelper):
         self.set_string("yax_format", value)
 
     def get(self):
-        return {k:v for k,v in self.options.items() if k in self._allowed_axes}
+        return {k:v for k,v in list(self.options.items()) if k in self._allowed_axes}
 

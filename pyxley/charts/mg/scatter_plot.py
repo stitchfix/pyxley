@@ -1,5 +1,5 @@
 
-from mg import MG
+from .mg import MG
 
 class ScatterPlot(MG):
     def __init__(self, df, figure, x, y, title="Scatter Plot",
@@ -15,7 +15,7 @@ class ScatterPlot(MG):
         }
         figure.graphics.chart_type("point")
         figure.graphics.target("#"+figure.chart_id)
-        for k, v in figure.get().items():
+        for k, v in list(figure.get().items()):
             self.plot_opts[k] = v
 
         def get_data():

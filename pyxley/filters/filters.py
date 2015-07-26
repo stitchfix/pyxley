@@ -26,7 +26,7 @@ class ConditionalButton(Filter):
             raise Exception("The length of labels, defaults, or filter_ids must be 2")
 
         item_data = []
-        for k, v in items.items():
+        for k, v in list(items.items()):
             item_data.append({"primary": k, "secondary": v})
 
         opts = {

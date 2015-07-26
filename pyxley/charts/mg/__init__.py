@@ -1,9 +1,9 @@
-import line_chart
-import scatter_plot
-import axes
-import figure
-import layout
-import histogram
+from . import line_chart
+from . import scatter_plot
+from . import axes
+from . import figure
+from . import layout
+from . import histogram
 
 Axes = axes.Axes
 Figure = figure.Figure

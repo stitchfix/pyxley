@@ -1,5 +1,5 @@
-import ui
-import react_template
+from . import ui
+from . import react_template
 
 ReactTemplate = react_template.ReactTemplate
 ReactComponent = react_template.ReactComponent

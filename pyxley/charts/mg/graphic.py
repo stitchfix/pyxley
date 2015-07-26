@@ -1,4 +1,4 @@
-from mg import OptionHelper
+from .mg import OptionHelper
 
 class Graphic(OptionHelper):
     _allowed_graphics = [
@@ -168,4 +168,4 @@ class Graphic(OptionHelper):
         self.set_boolean("y_rug", True)
 
     def get(self):
-        return {k:v for k,v in self.options.items() if k in self._allowed_graphics}
+        return {k:v for k,v in list(self.options.items()) if k in self._allowed_graphics}
