@@ -14,11 +14,14 @@
     "bootstrap": "~3.3.4",
     "react": "~0.13.1",
     "classnames": "~2.1.1",
-    "d3": "~3.5.5",
+    "d3": "~3.5.6",
     "react-bootstrap": "~0.22.6",
     "jquery": "~2.1.3",
     "require": "*",
     "datamaps": "~0.4.0",
     "pyxley": "~0.0.1"
+  },
+  "resolutions": {
+    "d3": "~3.5.6"
   }
 }
