@@ -31,12 +31,7 @@ def format_props(props):
     vars_ = []
     props_ = []
     for k, v in list(props.items()):
-        if isinstance(v, bool):
-            vars_.append(Template("var {{k}} = {{v|lower}};").render(k=k,v=v))
-        elif isinstance(v, list) or isinstance(v, dict):
-            vars_.append(Template("var {{k}} = {{v}};").render(k=k,v=json.dumps(v)))
-        else:
-            vars_.append(Template("var {{k}} = {{v}};").render(k=k,v=v))
+        vars_.append(Template("var {{k}} = {{v}};").render(k=k,v=json.dumps(v)))
         props_.append(Template("{{k}} = {{v}}").render(k=k, v="{"+k+"}"))
     return "\n".join(vars_), "\n".join(props_)
 
