@@ -22,7 +22,7 @@
     "require": "*",
     "datamaps": "~0.4.0",
     "metrics-graphics": "~2.5.0",
-    "pyxley": "~0.0.1"
+    "pyxley": "~0.0.3"
   },
   "resolutions": {
     "d3": "~3.5.5"
