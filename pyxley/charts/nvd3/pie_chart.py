@@ -37,6 +37,9 @@ class PieChart(NVD3):
     def to_json(self, df):
 
         records = []
+        if df.empty:
+            return {"data": []}
+
         sum_ = np.sum([df[c].iloc[0] for c in self.values])
         for c in self.values:
             records.append({
