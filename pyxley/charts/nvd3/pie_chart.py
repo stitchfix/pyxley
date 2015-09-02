@@ -10,7 +10,8 @@ class PieChart(NVD3):
             "type": "PieChart",
             "chartid": chart_id,
             "url": url,
-            "colors": colors
+            "colors": colors,
+            "init_params": init_params
         }
 
         self.values = values
