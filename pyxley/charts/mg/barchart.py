@@ -1,8 +1,8 @@
 from .mg import MG
 from flask import jsonify, request
 
-class LineChart(MG):
-    """Wrapper for MetricsGraphics Line plot.
+class BarChart(MG):
+    """Wrapper for MetricsGraphics Bar plot.
 
         https://github.com/mozilla/metrics-graphics/wiki/Chart-Types
         The user must supply a Figure object. When a route_func
@@ -13,26 +13,27 @@ class LineChart(MG):
             df (dataframe): input data.
             figure (mg.Figure): metricsgraphics figure object.
             x (str): name of the column corresponding to the x-axis.
-            y (list(str)): name of the columns corresponding to the y-axis.
+            y (str): name of the column corresponding to the y-axis.
             title (str): title of the figure.
             description (str): description of the figure.
             init_params (dict): parameters used to initialize the figure.
-            timeseries (bool): inidicates whether the plot is a timeseries.
             route_func (function): endpoint function.
 
     """
-    def __init__(self, df, figure, x, y, title="Line Chart",
-        description="Line Chart", init_params={}, timeseries=False,
+    def __init__(self, df, figure, x, y, title="Bar Chart",
+        description="Line Chart", init_params={},
         route_func=None):
 
         self.plot_opts = {
             "title": title,
+            "chart_type": "bar",
             "description": description,
             "target": "#"+figure.chart_id,
             "x_accessor": "x",
             "y_accessor": "y",
             "init_params": init_params
         }
+
         for k, v in list(figure.get().items()):
             self.plot_opts[k] = v
 
@@ -44,24 +45,26 @@ class LineChart(MG):
                         args[c] = request.args[c]
                     else:
                         args[c] = init_params[c]
-                return jsonify(LineChart.to_json(
+                return jsonify(BarChart.to_json(
                         self.apply_filters(df, args),
                         x,
-                        y,
-                        timeseries=timeseries
+                        y
                     ))
             route_func = get_data
 
-        super(LineChart, self).__init__(figure.chart_id, figure.url, self.plot_opts, route_func)
+        super(BarChart, self).__init__(figure.chart_id, figure.url, self.plot_opts, route_func)
 
     @staticmethod
-    def to_json(df, x, y, timeseries=False):
+    def to_json(df, x, y):
         """Format output for json response."""
-        values = {k: [] for k in y}
+        values = []
         for i, row in df.iterrows():
-            for yy in y:
-                values[yy].append({
-                    "x": row[x],
-                    "y": row[yy]
-                    })
-        return {"result":  [values[k] for k in y], "date": timeseries}
+            values.append({
+                "x": row[x],
+                "y": row[y]
+                })
+
+        if df.empty:
+            return {"result": [{"x": 0, "y": 0}], "date": False}
+
+        return {"result": values, "date": False}
