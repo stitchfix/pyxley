@@ -3,10 +3,12 @@ import pandas as pd
 from flask import request, jsonify, make_response
 
 class Chart(UIComponent):
+    """Base chart component."""
     name = "Chart"
 
     @staticmethod
     def apply_filters(df, filters):
+        """Basic filtering for a dataframe."""
         idx = pd.Series([True]*df.shape[0])
         for k, v in list(filters.items()):
             if k not in df.columns:
