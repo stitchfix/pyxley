@@ -51,10 +51,22 @@ _COLOR_MAP = {
     "turquoise": '#40e0d0',
     "white": '#ffffff',
     "yellow": '#ffff00',
-    "other": '#111111'
+    "other": '#111111',
+    "defaultFills": "black"
 }
 
 class Datamap(Chart):
+    """ Pyxley Datamaps Chart component.
+
+        This is the base class for the PyxleyJS Datamaps wrapper.
+
+        Args:
+            url: name of endpoint to transmit data.
+            chart_id: html element id.
+            params: parameters chart will be initialized with.
+            route_func: function called by the endpoint
+
+    """
     def __init__(self, chart_id, url, params, api_route):
         opts = {
             "url": url,
@@ -64,37 +76,60 @@ class Datamap(Chart):
         super(Datamap, self).__init__("Datamaps", opts, api_route)
 
 class DatamapUSA(Datamap):
+    """ Wrapper for PyxleyJS Datamaps component.
+
+        By default, this class builds a simple endpoint function.
+        This can be overriden by supplying a route_func. When
+        a route_func has been supplied, only the url, init_params,
+        and route_func will be used.
+
+        Args:
+            url: name of endpoint to transmit data.
+            chart_id: html element id.
+            df: dataframe containing states and colors.
+            state_index: column name of dataframe containing states.
+            color_index: column name of dataframe containing colors.
+            init_params: parameters chart will be initialized with.
+            color_map: dictionary of color labels and hex values.
+            route_func: function called by the endpoint. default is None
+
+
+    """
     def __init__(self, url, chart_id, df,
                 state_index, color_index,
                 init_params={},
-                color_map=_COLOR_MAP):
+                color_map=_COLOR_MAP,
+                route_func=None):
 
-        self.state_index = state_index
-        self.color_index = color_index
-        self.fills = color_map
-        self.fills["defaultFills"] = "black"
+        if not route_func:
+            def get_data():
+                args = {}
+                for c in init_params:
+                    if request.args.get(c):
+                        args[c] = request.args[c]
+                    else:
+                        args[c] = init_params[c]
+                return jsonify(DatamapUSA.to_json(
+                        self.apply_filters(df, args),
+                            state_index,
+                            color_index,
+                            color_map
+                    ))
+            route_func = get_data
 
-        def get_data():
-            args = {}
-            for c in init_params:
-                if request.args.get(c):
-                    args[c] = request.args[c]
-                else:
-                    args[c] = init_params[c]
-            return jsonify(self.to_json(
-                    self.apply_filters(df, args)
-                ))
-        super(DatamapUSA, self).__init__(chart_id, url, init_params, get_data)
+        super(DatamapUSA, self).__init__(chart_id, url, init_params, route_func)
 
-    def to_json(self, df):
+    @staticmethod
+    def to_json(df, state_index, color_index, fills):
+        """Transforms dataframe to json response"""
         records = {}
         for i, row in df.iterrows():
 
-            records[row[self.state_index]] = {
-                "fillKey": row[self.color_index]
+            records[row[state_index]] = {
+                "fillKey": row[color_index]
             }
 
         return {
             "data": records,
-            "fills": self.fills
+            "fills": fills
         }
