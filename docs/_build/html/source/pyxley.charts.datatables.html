@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyxley.charts.datatables package &mdash; pyxley 0.0.7 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="pyxley 0.0.7 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pyxley
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../why.html">Why Pyxley?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Core Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic.html">A Basic Pyxley App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../production.html">Pyxley In Production</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">pyxley</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>pyxley.charts.datatables package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/source/pyxley.charts.datatables.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyxley-charts-datatables-package">
+<h1>pyxley.charts.datatables package<a class="headerlink" href="#pyxley-charts-datatables-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pyxley.charts.datatables.datatable">
+<span id="pyxley-charts-datatables-datatable-module"></span><h2>pyxley.charts.datatables.datatable module<a class="headerlink" href="#module-pyxley.charts.datatables.datatable" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.datatables.datatable.DataTable">
+<em class="property">class </em><code class="descclassname">pyxley.charts.datatables.datatable.</code><code class="descname">DataTable</code><span class="sig-paren">(</span><em>table_id</em>, <em>url</em>, <em>df</em>, <em>columns={}</em>, <em>init_params={}</em>, <em>paging=False</em>, <em>searching=False</em>, <em>sortable=False</em>, <em>classname='display'</em>, <em>route_func=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.datatables.datatable.DataTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyxley.charts.html#pyxley.charts.charts.Chart" title="pyxley.charts.charts.Chart"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.charts.Chart</span></code></a></p>
+<p>Wrapper for jquery DataTables.</p>
+<p>This class provides a wrapper for the JQuery DataTables
+component within PyxleyJS. Datatables options can be passed
+through the kwargs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>table_id</strong> (<em>str</em>) &#8211; html element id.</li>
+<li><strong>url</strong> (<em>str</em>) &#8211; name of the endpoint to be created.</li>
+<li><strong>df</strong> (<em>dataframe</em>) &#8211; tabular data to be rendered.</li>
+<li><strong>columns</strong> (<em>OrderedDict</em>) &#8211; columns to display. order is preserved by
+the OrderedDict.</li>
+<li><strong>init_params</strong> (<em>dict</em>) &#8211; parameters used to initialize the table.</li>
+<li><strong>paging</strong> (<em>bool</em>) &#8211; enable paging.</li>
+<li><strong>searching</strong> (<em>bool</em>) &#8211; enable searching.</li>
+<li><strong>sortable</strong> (<em>bool</em>) &#8211; enable sorting.</li>
+<li><strong>classname</strong> (<em>str</em>) &#8211; html classname for css.</li>
+<li><strong>route_func</strong> (<em>function</em>) &#8211; endpoint function. Default is None.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="staticmethod">
+<dt id="pyxley.charts.datatables.datatable.DataTable.format_row">
+<em class="property">static </em><code class="descname">format_row</code><span class="sig-paren">(</span><em>row</em>, <em>bounds</em>, <em>columns</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.datatables.datatable.DataTable.format_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Formats a single row of the dataframe</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pyxley.charts.datatables.datatable.DataTable.to_json">
+<em class="property">static </em><code class="descname">to_json</code><span class="sig-paren">(</span><em>df</em>, <em>columns</em>, <em>confidence={}</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.datatables.datatable.DataTable.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms dataframe to properly formatted json response</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.datatables">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyxley.charts.datatables" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Nicholas Kridler.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.7',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

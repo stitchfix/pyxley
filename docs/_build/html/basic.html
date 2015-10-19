@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>A Basic Pyxley App &mdash; pyxley 0.0.7 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="pyxley 0.0.7 documentation" href="index.html"/>
+        <link rel="next" title="Pyxley In Production" href="production.html"/>
+        <link rel="prev" title="Core Components" href="core.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pyxley
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="why.html">Why Pyxley?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core Components</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">A Basic Pyxley App</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#javascript">JavaScript!</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#node-npm">Node &amp; NPM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bower">Bower</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#html-css">HTML &amp; CSS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#css">CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#flask">Flask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-some-pyxley">Adding Some Pyxley</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="production.html">Pyxley In Production</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">pyxley</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>A Basic Pyxley App</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/basic.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="a-basic-pyxley-app">
+<h1>A Basic Pyxley App<a class="headerlink" href="#a-basic-pyxley-app" title="Permalink to this headline">¶</a></h1>
+<p>Here we will go through building a basic web-application using Pyxley and Flask.</p>
+<p>I recommend visiting the <a class="reference external" href="https://realpython.com/blog/python/the-ultimate-flask-front-end/">Real Python blog</a> for a great intro to a basic app.</p>
+<div class="highlight-python"><div class="highlight"><pre>App
+|   package.json
+|   .bowerrc
+|   bower.json
+|
+└---project
+    |   app.py
+    |   templates
+    |
+    └---static
+        |   css
+        |   js
+</pre></div>
+</div>
+<p>Some notes about the above structure</p>
+<ul class="simple">
+<li>This assumes that you are running the app from the <code class="docutils literal"><span class="pre">project</span></code> folder.</li>
+<li>Any JavaScript created by the app should go in the <code class="docutils literal"><span class="pre">js</span></code> folder.</li>
+</ul>
+<div class="section" id="javascript">
+<h2>JavaScript!<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="node-npm">
+<h3>Node &amp; NPM<a class="headerlink" href="#node-npm" title="Permalink to this headline">¶</a></h3>
+<p>At the highest level, Node is our biggest JavaScript dependency. PyReact
+needs a JavaScript runtime and Node fills that role. In addition, we
+can use <a class="reference external" href="https://www.npmjs.com">NPM</a> to install Bower. This document
+won&#8217;t show you how to get Node or NPM, but for Mac OS X users, you can
+get it through homebrew.</p>
+<p>Once you have NPM, simply type</p>
+<div class="highlight-python"><div class="highlight"><pre>npm install -g bower
+</pre></div>
+</div>
+<p>This will give bower global access so that you can execute it.</p>
+</div>
+<div class="section" id="bower">
+<h3>Bower<a class="headerlink" href="#bower" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://bower.io/">Bower</a> is a great package manager. In the examples
+directory, each of the examples has a <code class="docutils literal"><span class="pre">bower.json</span></code> file. This file
+contains all the necessary packages for the app to run. Install the
+packages by typing <code class="docutils literal"><span class="pre">bower</span> <span class="pre">install</span></code> in the directory of the <code class="docutils literal"><span class="pre">bower.json</span></code>
+file. There is a file called <code class="docutils literal"><span class="pre">.bowerrc</span></code> that specifies the location that
+bower will store the libraries.</p>
+<p>If the <code class="docutils literal"><span class="pre">.bowerrc</span></code> file looks like</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;directory&quot;</span><span class="p">:</span> <span class="s">&quot;./project/static/bower_components&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then the folder structure in static should look like the figure below after installation.</p>
+<div class="highlight-python"><div class="highlight"><pre>└---static
+    |   css
+    |   js
+    |   bower_components
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="html-css">
+<h2>HTML &amp; CSS<a class="headerlink" href="#html-css" title="Permalink to this headline">¶</a></h2>
+<p>HTML templates used by flask are stored in the <code class="docutils literal"><span class="pre">templates</span></code> folder. For our purposes,
+we only need a really basic template that has a single <code class="docutils literal"><span class="pre">div</span></code> element.</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;div id=&quot;component_id&quot;&gt;&lt;/div&gt;
+</pre></div>
+</div>
+<p>Everything in our app will be tied to this single component.</p>
+<div class="section" id="css">
+<h3>CSS<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h3>
+<p>We store any additional CSS we need in the <code class="docutils literal"><span class="pre">static\CSS</span></code> folder.</p>
+</div>
+</div>
+<div class="section" id="flask">
+<h2>Flask<a class="headerlink" href="#flask" title="Permalink to this headline">¶</a></h2>
+<p>Courtesy of the Flask website, &#8220;Hello, World!&#8221; in Flask looks like the code below.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">&#39;Hello World!&#39;</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We simply need to build upon this.</p>
+</div>
+<div class="section" id="adding-some-pyxley">
+<h2>Adding Some Pyxley<a class="headerlink" href="#adding-some-pyxley" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s start by importing some simple things and building upon the example above. We
+will import some <code class="docutils literal"><span class="pre">pyxley</span></code> components, create a UI, and load a data frame.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Import flask and pandas</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="c"># Import pyxley stuff</span>
+<span class="kn">from</span> <span class="nn">pyxley</span> <span class="kn">import</span> <span class="n">UILayout</span>
+<span class="kn">from</span> <span class="nn">pyxley.filters</span> <span class="kn">import</span> <span class="n">SelectButton</span>
+<span class="kn">from</span> <span class="nn">pyxley.charts.mg</span> <span class="kn">import</span> <span class="n">LineChart</span><span class="p">,</span> <span class="n">Figure</span>
+
+<span class="c"># Read in the data and stack it, so that we can filter on columns</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&quot;fitbit_data.csv&quot;</span><span class="p">)</span>
+<span class="n">sf</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">&quot;Date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">sf</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;level_1&quot;</span><span class="p">:</span> <span class="s">&quot;Data&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="s">&quot;value&quot;</span><span class="p">})</span>
+
+<span class="c"># Make a UI</span>
+<span class="n">ui</span> <span class="o">=</span> <span class="n">UILayout</span><span class="p">(</span>
+    <span class="s">&quot;FilterChart&quot;</span><span class="p">,</span>
+    <span class="s">&quot;./static/bower_components/pyxley/build/pyxley.js&quot;</span><span class="p">,</span>
+    <span class="s">&quot;component_id&quot;</span><span class="p">)</span>
+
+<span class="c"># Create the flask app</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At this point we now have some data and a layout to build upon. Adding the code
+below will add a dropdown select button and a line plot.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Make a Button</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="s">&quot;Date&quot;</span><span class="p">]</span>
+<span class="n">btn</span> <span class="o">=</span> <span class="n">SelectButton</span><span class="p">(</span><span class="s">&quot;Data&quot;</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="s">&quot;Data&quot;</span><span class="p">,</span> <span class="s">&quot;Steps&quot;</span><span class="p">)</span>
+
+<span class="c"># Make a FilterFrame and add the button to the UI</span>
+<span class="n">ui</span><span class="o">.</span><span class="n">add_filter</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span>
+
+<span class="c"># Make a Figure, add some settings, make a line plot</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">Figure</span><span class="p">(</span><span class="s">&quot;/mgchart/&quot;</span><span class="p">,</span> <span class="s">&quot;mychart&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">transition_on_update</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">animate_on_load</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">set_size</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">set_margin</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">lc</span> <span class="o">=</span> <span class="n">LineChart</span><span class="p">(</span><span class="n">sf</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="s">&quot;Date&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;value&quot;</span><span class="p">],</span> <span class="n">init_params</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;Data&quot;</span><span class="p">:</span> <span class="s">&quot;Steps&quot;</span><span class="p">},</span> <span class="n">timeseries</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">ui</span><span class="o">.</span><span class="n">add_chart</span><span class="p">(</span><span class="n">lc</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, we need to transform all of the inputs into javascript and render the HTML template.
+This assumes that the <code class="docutils literal"><span class="pre">index.html</span></code> template has all of the javascript and css files specified
+in the HTML.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sb</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">render_layout</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s">&quot;./static/layout.js&quot;</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;GET&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&#39;index.html&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now when you run <code class="docutils literal"><span class="pre">app.py</span></code> from the <code class="docutils literal"><span class="pre">project</span></code> folder, accessing your localhost on port 5000 will lead to a simple plot. This example was adapted from the <a class="reference external" href="https://github.com/stitchfix/pyxley/blob/master/examples/metricsgraphics/project/app.py">metricsgraphics example in the</a> Pyxley repository.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="production.html" class="btn btn-neutral float-right" title="Pyxley In Production" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="core.html" class="btn btn-neutral" title="Core Components" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Nicholas Kridler.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.7',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyxley.filters package &mdash; pyxley 0.0.7 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="pyxley 0.0.7 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pyxley
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../why.html">Why Pyxley?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Core Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic.html">A Basic Pyxley App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../production.html">Pyxley In Production</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">pyxley</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>pyxley.filters package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/source/pyxley.filters.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyxley-filters-package">
+<h1>pyxley.filters package<a class="headerlink" href="#pyxley-filters-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pyxley.filters.filters">
+<span id="pyxley-filters-filters-module"></span><h2>pyxley.filters.filters module<a class="headerlink" href="#module-pyxley.filters.filters" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.filters.filters.ApiButton">
+<em class="property">class </em><code class="descclassname">pyxley.filters.filters.</code><code class="descname">ApiButton</code><span class="sig-paren">(</span><em>label</em>, <em>url</em>, <em>filter_id</em>, <em>default</em>, <em>route_func</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.filters.filters.ApiButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.filters.filters.Filter" title="pyxley.filters.filters.Filter"><code class="xref py py-class docutils literal"><span class="pre">pyxley.filters.filters.Filter</span></code></a></p>
+<p>Selections populated by API.</p>
+<p>A dropdown selection button based on the React-Bootstrap Dropdown.
+<a class="reference external" href="http://react-bootstrap.github.io/components.html#buttons">http://react-bootstrap.github.io/components.html#buttons</a></p>
+<p>The selections are created by calling an endpoint.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>label</strong> (<em>str</em>) &#8211; label of the button.</li>
+<li><strong>url</strong> (<em>str</em>) &#8211; name of endpoint to create.</li>
+<li><strong>filter_id</strong> (<em>str</em>) &#8211; alias of the filter.</li>
+<li><strong>default</strong> (<em>str</em>) &#8211; default selection.</li>
+<li><strong>route_func</strong> (<em>function</em>) &#8211; endpoint function to serve the options.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyxley.filters.filters.ConditionalButton">
+<em class="property">class </em><code class="descclassname">pyxley.filters.filters.</code><code class="descname">ConditionalButton</code><span class="sig-paren">(</span><em>labels</em>, <em>items</em>, <em>filter_ids</em>, <em>defaults</em>, <em>filter_style='btn-group'</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.filters.filters.ConditionalButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.filters.filters.Filter" title="pyxley.filters.filters.Filter"><code class="xref py py-class docutils literal"><span class="pre">pyxley.filters.filters.Filter</span></code></a></p>
+<p>Conditional Button Group.</p>
+<p>A group of two buttons where the parent choice affects
+the child choice.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>labels</strong> (<em>list</em>) &#8211; labels of the button.</li>
+<li><strong>items</strong> (<em>dict</em>) &#8211; choices, children are nested.</li>
+<li><strong>filter_ids</strong> (<em>list</em>) &#8211; list of aliases for the filter.</li>
+<li><strong>defaults</strong> (<em>list</em>) &#8211; default selections.</li>
+<li><strong>filter_style</strong> &#8211; css for the buttons.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyxley.filters.filters.DownloadButton">
+<em class="property">class </em><code class="descclassname">pyxley.filters.filters.</code><code class="descname">DownloadButton</code><span class="sig-paren">(</span><em>label</em>, <em>url</em>, <em>route_func</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.filters.filters.DownloadButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.filters.filters.Filter" title="pyxley.filters.filters.Filter"><code class="xref py py-class docutils literal"><span class="pre">pyxley.filters.filters.Filter</span></code></a></p>
+<p>Download Button.</p>
+<p>A simple download button.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>label</strong> (<em>str</em>) &#8211; label of the button.</li>
+<li><strong>url</strong> (<em>str</em>) &#8211; endpoint to call upon click.</li>
+<li><strong>route_func</strong> (<em>function</em>) &#8211; endpoint function.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyxley.filters.filters.DynamicTextInput">
+<em class="property">class </em><code class="descclassname">pyxley.filters.filters.</code><code class="descname">DynamicTextInput</code><span class="sig-paren">(</span><em>url</em>, <em>filter_id</em>, <em>default</em>, <em>route_func</em>, <em>placeholder='Enter text...'</em>, <em>help=''</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.filters.filters.DynamicTextInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.filters.filters.Filter" title="pyxley.filters.filters.Filter"><code class="xref py py-class docutils literal"><span class="pre">pyxley.filters.filters.Filter</span></code></a></p>
+<p>Dynamic Text Selection.</p>
+<p>A combination search bar plus drop down inspired by:
+<a class="reference external" href="https://realpython.com/blog/python/the-ultimate-flask-front-end-part-2/">https://realpython.com/blog/python/the-ultimate-flask-front-end-part-2/</a></p>
+<p>The selections are created by calling an endpoint.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> (<em>str</em>) &#8211; name of endpoint to create.</li>
+<li><strong>filter_id</strong> (<em>str</em>) &#8211; alias of the filter.</li>
+<li><strong>default</strong> (<em>str</em>) &#8211; default selection.</li>
+<li><strong>route_func</strong> (<em>function</em>) &#8211; endpoint function to serve the options.</li>
+<li><strong>placeholder</strong> (<em>str</em>) &#8211; default text.</li>
+<li><strong>help</strong> (<em>str</em>) &#8211; help text.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyxley.filters.filters.Filter">
+<em class="property">class </em><code class="descclassname">pyxley.filters.filters.</code><code class="descname">Filter</code><span class="sig-paren">(</span><em>component_type</em>, <em>options</em>, <em>route_func</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.filters.filters.Filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyxley.html#pyxley.ui.UIComponent" title="pyxley.ui.UIComponent"><code class="xref py py-class docutils literal"><span class="pre">pyxley.ui.UIComponent</span></code></a></p>
+<p>Base class for Filter UIComponent</p>
+<dl class="attribute">
+<dt id="pyxley.filters.filters.Filter.name">
+<code class="descname">name</code><em class="property"> = 'Filter'</em><a class="headerlink" href="#pyxley.filters.filters.Filter.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyxley.filters.filters.SelectButton">
+<em class="property">class </em><code class="descclassname">pyxley.filters.filters.</code><code class="descname">SelectButton</code><span class="sig-paren">(</span><em>label</em>, <em>items</em>, <em>filter_id</em>, <em>default</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.filters.filters.SelectButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.filters.filters.Filter" title="pyxley.filters.filters.Filter"><code class="xref py py-class docutils literal"><span class="pre">pyxley.filters.filters.Filter</span></code></a></p>
+<p>Dropdown Button.</p>
+<p>A dropdown selection button based on the React-Bootstrap Dropdown.
+<a class="reference external" href="http://react-bootstrap.github.io/components.html#buttons">http://react-bootstrap.github.io/components.html#buttons</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>label</strong> (<em>str</em>) &#8211; label of the button.</li>
+<li><strong>items</strong> (<em>dict</em>) &#8211; choices, children are nested.</li>
+<li><strong>filter_id</strong> (<em>str</em>) &#8211; alias of the filter.</li>
+<li><strong>default</strong> (<em>str</em>) &#8211; default selection.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyxley.filters.filters.SliderInput">
+<em class="property">class </em><code class="descclassname">pyxley.filters.filters.</code><code class="descname">SliderInput</code><span class="sig-paren">(</span><em>label</em>, <em>min_val</em>, <em>max_val</em>, <em>filter_id</em>, <em>default</em>, <em>step=1</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.filters.filters.SliderInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.filters.filters.Filter" title="pyxley.filters.filters.Filter"><code class="xref py py-class docutils literal"><span class="pre">pyxley.filters.filters.Filter</span></code></a></p>
+<p>Simple Slider input.</p>
+<p>A slider bar.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>label</strong> (<em>str</em>) &#8211; label of the slider.</li>
+<li><strong>min_val</strong> (<em>int</em>) &#8211; minimum value.</li>
+<li><strong>max_val</strong> (<em>int</em>) &#8211; maximum value.</li>
+<li><strong>filter_id</strong> (<em>str</em>) &#8211; list of aliases for the filter.</li>
+<li><strong>default</strong> (<em>int</em>) &#8211; default selection.</li>
+<li><strong>step</strong> (<em>int</em>) &#8211; size of the step associated with the slider.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.filters">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyxley.filters" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Nicholas Kridler.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.7',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

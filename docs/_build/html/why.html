@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Why Pyxley? &mdash; pyxley 0.0.7 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="pyxley 0.0.7 documentation" href="index.html"/>
+        <link rel="next" title="Core Components" href="core.html"/>
+        <link rel="prev" title="Pyxley!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pyxley
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Why Pyxley?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#react">React</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flask">Flask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyxleyjs">PyxleyJS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#insane-templates">Insane Templates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">A Basic Pyxley App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="production.html">Pyxley In Production</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">pyxley</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Why Pyxley?</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/why.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="why-pyxley">
+<h1>Why Pyxley?<a class="headerlink" href="#why-pyxley" title="Permalink to this headline">¶</a></h1>
+<p>Pyxley was born out of the desire to combine the ease of data manipulation in pandas
+with the beautiful visualizations available in JavaScript. It was largely inspired by
+<a class="reference external" href="https://realpython.com/blog/python/the-ultimate-flask-front-end/">Real Python</a>. The goal was to create a library of reusable visualization components
+that allow the quick development of web-based data products. For data scientists with limited
+JavaScript exposure, this package is meant to provide generic visualizations along with the
+ability to customize as needed.</p>
+<div class="section" id="react">
+<h2>React<a class="headerlink" href="#react" title="Permalink to this headline">¶</a></h2>
+<p>Pyxley utilizes Facebook&#8217;s <a class="reference external" href="http://facebook.github.io/react/index.html">React</a>. React
+is only concerned with the UI, so we can use it for only the front-end portion of our
+web-applications.</p>
+</div>
+<div class="section" id="flask">
+<h2>Flask<a class="headerlink" href="#flask" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://readthedocs.org/projects/flask/">Flask</a> is a great micro web-framework. It
+allows us to very easily stand up web applications and services.</p>
+</div>
+<div class="section" id="pyxleyjs">
+<h2>PyxleyJS<a class="headerlink" href="#pyxleyjs" title="Permalink to this headline">¶</a></h2>
+<p>Pyxley relies on a JavaScript library that heavily leverages React and existing
+visualization libraries. Wrappers for common libraries have been created so that
+the user only needs to specify the type of chart they want, the filters they wish
+to include, and the parameters specific to that visualization.</p>
+<p>To download or contribute, visit <a class="reference external" href="http://www.github.com/stitchfix/pyxleyJS">PyxleyJS</a>.</p>
+</div>
+<div class="section" id="insane-templates">
+<h2>Insane Templates<a class="headerlink" href="#insane-templates" title="Permalink to this headline">¶</a></h2>
+<p>A lot of other projects rely on a set of complicated templates that attempt to cover
+as many use cases as possible. The wonderful thing about React is the ability to create
+compositions of components. This means that we only need a single template: a parent component that manages all of the child components. With this layout, we can use factories within JavaScript
+to create the components using the supplied parameters. Organizing the code in this way
+allows us to create a common framework through which we can create a variety of different
+components.</p>
+<p>For example, the underlying interface for a Dropdown Button and a Line Chart are
+the same. The only difference is the options supplied by the user. This provides a really
+easy way to integrate with Python. We can use Python for organizing the types and options.
+PyReact can then be used to transform to JavaScript.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="core.html" class="btn btn-neutral float-right" title="Core Components" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Pyxley!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Nicholas Kridler.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.7',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

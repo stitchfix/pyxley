@@ -1,0 +1,1046 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyxley.charts.mg package &mdash; pyxley 0.0.7 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="pyxley 0.0.7 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pyxley
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../why.html">Why Pyxley?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Core Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic.html">A Basic Pyxley App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../production.html">Pyxley In Production</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">pyxley</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>pyxley.charts.mg package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/source/pyxley.charts.mg.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyxley-charts-mg-package">
+<h1>pyxley.charts.mg package<a class="headerlink" href="#pyxley-charts-mg-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pyxley.charts.mg.axes">
+<span id="pyxley-charts-mg-axes-module"></span><h2>pyxley.charts.mg.axes module<a class="headerlink" href="#module-pyxley.charts.mg.axes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.mg.axes.Axes">
+<em class="property">class </em><code class="descclassname">pyxley.charts.mg.axes.</code><code class="descname">Axes</code><a class="headerlink" href="#pyxley.charts.mg.axes.Axes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.charts.mg.mg.OptionHelper" title="pyxley.charts.mg.mg.OptionHelper"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.mg.mg.OptionHelper</span></code></a></p>
+<p>Axes object for metricgraphics.</p>
+<p>This class is used to specify axes options for the metricsgraphics api.
+<a class="reference external" href="https://github.com/mozilla/metrics-graphics/wiki/Axes">https://github.com/mozilla/metrics-graphics/wiki/Axes</a></p>
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.get">
+<code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve options set by user.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.logscale">
+<code class="descname">logscale</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.logscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set flag to log scale the y-axis.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_inflator">
+<code class="descname">set_inflator</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_inflator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set inflator value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>float</em>) &#8211; inflator value.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_min_y_from_data">
+<code class="descname">set_min_y_from_data</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_min_y_from_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set flag to find the minimum y-value from the data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_small_text">
+<code class="descname">set_small_text</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_small_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set flag to show small text.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_xformat">
+<code class="descname">set_xformat</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_xformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the x-axis format.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_xlabel">
+<code class="descname">set_xlabel</code><span class="sig-paren">(</span><em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_xlabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set x-axis label.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_xlim">
+<code class="descname">set_xlim</code><span class="sig-paren">(</span><em>xlim</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_xlim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set x-axis limits.</p>
+<p>Accepts a two-element list to set the x-axis limits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>xlim</strong> (<em>list</em>) &#8211; lower and upper bounds</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+xlim must contain two elements</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+Min must be less than max</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_xticks_count">
+<code class="descname">set_xticks_count</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_xticks_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set xticks counts.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_xticks_length">
+<code class="descname">set_xticks_length</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_xticks_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the length of the x-axis ticks.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_xunits">
+<code class="descname">set_xunits</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_xunits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the units on the x-axis.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_yformat">
+<code class="descname">set_yformat</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_yformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the y-axis format.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_ylabel">
+<code class="descname">set_ylabel</code><span class="sig-paren">(</span><em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_ylabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set y-axis label.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_ylim">
+<code class="descname">set_ylim</code><span class="sig-paren">(</span><em>ylim</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_ylim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set y-axis limits.</p>
+<p>Accepts a two-element list to set the y-axis limits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ylim</strong> (<em>list</em>) &#8211; lower and upper bounds</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+ylim must contain two elements</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+Min must be less than max</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_yticks_count">
+<code class="descname">set_yticks_count</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_yticks_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set yticks counts.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_yticks_length">
+<code class="descname">set_yticks_length</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_yticks_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the length of the y-axis ticks.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.set_yunits">
+<code class="descname">set_yunits</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.set_yunits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the units on the y-axis.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.show_secondary_x_label">
+<code class="descname">show_secondary_x_label</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.show_secondary_x_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set flag to show secondary x label.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.show_x_extended_ticks">
+<code class="descname">show_x_extended_ticks</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.show_x_extended_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set flag to show extended x-axis tick marks.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.show_xaxis">
+<code class="descname">show_xaxis</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.show_xaxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set flag to show x-axis.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.show_y_extended_ticks">
+<code class="descname">show_y_extended_ticks</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.show_y_extended_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set flag to show extended y-axis tick marks.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.show_yaxis">
+<code class="descname">show_yaxis</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.show_yaxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set flag to show y-axis.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.show_year_markers">
+<code class="descname">show_year_markers</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.show_year_markers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set flag to show year markers.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.axes.Axes.xaxis_start_at_min">
+<code class="descname">xaxis_start_at_min</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.axes.Axes.xaxis_start_at_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set flag to start x-axis at the min value.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.mg.barchart">
+<span id="pyxley-charts-mg-barchart-module"></span><h2>pyxley.charts.mg.barchart module<a class="headerlink" href="#module-pyxley.charts.mg.barchart" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.mg.barchart.BarChart">
+<em class="property">class </em><code class="descclassname">pyxley.charts.mg.barchart.</code><code class="descname">BarChart</code><span class="sig-paren">(</span><em>df</em>, <em>figure</em>, <em>x</em>, <em>y</em>, <em>title='Bar Chart'</em>, <em>description='Line Chart'</em>, <em>init_params={}</em>, <em>route_func=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.barchart.BarChart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.charts.mg.mg.MG" title="pyxley.charts.mg.mg.MG"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.mg.mg.MG</span></code></a></p>
+<p>Wrapper for MetricsGraphics Bar plot.</p>
+<p><a class="reference external" href="https://github.com/mozilla/metrics-graphics/wiki/Chart-Types">https://github.com/mozilla/metrics-graphics/wiki/Chart-Types</a>
+The user must supply a Figure object. When a route_func
+is supplied, the dataframe and other options are ignored
+in favor of the endpoint function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>df</strong> (<em>dataframe</em>) &#8211; input data.</li>
+<li><strong>figure</strong> (<em>mg.Figure</em>) &#8211; metricsgraphics figure object.</li>
+<li><strong>x</strong> (<em>str</em>) &#8211; name of the column corresponding to the x-axis.</li>
+<li><strong>y</strong> (<em>str</em>) &#8211; name of the column corresponding to the y-axis.</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; title of the figure.</li>
+<li><strong>description</strong> (<em>str</em>) &#8211; description of the figure.</li>
+<li><strong>init_params</strong> (<em>dict</em>) &#8211; parameters used to initialize the figure.</li>
+<li><strong>route_func</strong> (<em>function</em>) &#8211; endpoint function.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="staticmethod">
+<dt id="pyxley.charts.mg.barchart.BarChart.to_json">
+<em class="property">static </em><code class="descname">to_json</code><span class="sig-paren">(</span><em>df</em>, <em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.barchart.BarChart.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format output for json response.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.mg.figure">
+<span id="pyxley-charts-mg-figure-module"></span><h2>pyxley.charts.mg.figure module<a class="headerlink" href="#module-pyxley.charts.mg.figure" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.mg.figure.Figure">
+<em class="property">class </em><code class="descclassname">pyxley.charts.mg.figure.</code><code class="descname">Figure</code><span class="sig-paren">(</span><em>url</em>, <em>chart_id</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.figure.Figure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Metricsgraphics Figure class.</p>
+<p>This class is a composition of Axes, Graphic, and Layout options.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> (<em>str</em>) &#8211; name of the endpoint to create.</li>
+<li><strong>chart_id</strong> (<em>str</em>) &#8211; html element id.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pyxley.charts.mg.figure.Figure.get">
+<code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.figure.Figure.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return axes, graphics, and layout options.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.mg.graphic">
+<span id="pyxley-charts-mg-graphic-module"></span><h2>pyxley.charts.mg.graphic module<a class="headerlink" href="#module-pyxley.charts.mg.graphic" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.mg.graphic.Graphic">
+<em class="property">class </em><code class="descclassname">pyxley.charts.mg.graphic.</code><code class="descname">Graphic</code><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.charts.mg.mg.OptionHelper" title="pyxley.charts.mg.mg.OptionHelper"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.mg.mg.OptionHelper</span></code></a></p>
+<p>Graphic options for the metricsgraphics api.</p>
+<p>This class contains all graphics options for the metricsgraphics api.
+<a class="reference external" href="https://github.com/mozilla/metrics-graphics/wiki/Graphic">https://github.com/mozilla/metrics-graphics/wiki/Graphic</a></p>
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.add_baseline">
+<code class="descname">add_baseline</code><span class="sig-paren">(</span><em>value</em>, <em>label='baseline'</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.add_baseline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.aggregate_rollover">
+<code class="descname">aggregate_rollover</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.aggregate_rollover" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.animate_on_load">
+<code class="descname">animate_on_load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.animate_on_load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.area">
+<code class="descname">area</code><span class="sig-paren">(</span><em>value=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.area" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.as_list">
+<code class="descname">as_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.as_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set flag to automatically map the data to x and y accessors.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.chart_type">
+<code class="descname">chart_type</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.chart_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the MetricsGraphics chart type.
+Allowed charts are: line, histogram, point, and bar</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>str</em>) &#8211; chart type.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+Not a valid chart type.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.custom_line_color_map">
+<code class="descname">custom_line_color_map</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.custom_line_color_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the custom line color map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>values</strong> (<em>list</em>) &#8211; list of colors.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code> &#8211;
+Custom line color map must be a list.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.decimals">
+<code class="descname">decimals</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.decimals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the number of decimals to display.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.error">
+<code class="descname">error</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the error message.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.format">
+<code class="descname">format</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the format type.
+Allowed charts are: count or percentage</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>str</em>) &#8211; format type.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+Not a valid format. Must be count or percentage.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.full_height">
+<code class="descname">full_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.full_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use full height?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.full_width">
+<code class="descname">full_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.full_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use full width?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.get">
+<code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get graphics options.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.interpolate">
+<code class="descname">interpolate</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.interpolate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the interpolate type.
+See metricsgraphics documentation for interpolate types
+<a class="reference external" href="https://github.com/mozilla/metrics-graphics/wiki/List-of-Options">https://github.com/mozilla/metrics-graphics/wiki/List-of-Options</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>str</em>) &#8211; interpolate type.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+Not a valid interpolation method.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.interpolate_tension">
+<code class="descname">interpolate_tension</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.interpolate_tension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the interpolate tension.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>str</em>) &#8211; interpolate type.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+Tension must in [0, 1].</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.legend">
+<code class="descname">legend</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.legend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the legend labels.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>values</strong> (<em>list</em>) &#8211; list of labels.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+legend must be a list of labels.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.legend_target">
+<code class="descname">legend_target</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.legend_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the legend target.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.linked">
+<code class="descname">linked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.linked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Link the charts?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.linked_format">
+<code class="descname">linked_format</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.linked_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the link format.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.markers">
+<code class="descname">markers</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.markers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the markers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>values</strong> (<em>list</em>) &#8211; list of marker objects.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+Markers must be a list of objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.max_data_size">
+<code class="descname">max_data_size</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.max_data_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the max data size.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.missing_text">
+<code class="descname">missing_text</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.missing_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the text for missing graphics.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.point_size">
+<code class="descname">point_size</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.point_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the point size.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.show_confidence_band">
+<code class="descname">show_confidence_band</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.show_confidence_band" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show confidence band?
+See metricsgraphics documentation
+:param value: strings</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code> &#8211;
+show_confidence_band must be a list of strings.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.show_missing_background">
+<code class="descname">show_missing_background</code><span class="sig-paren">(</span><em>value=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.show_missing_background" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a background for missing graphics?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.show_rollover_text">
+<code class="descname">show_rollover_text</code><span class="sig-paren">(</span><em>value=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.show_rollover_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show rollover text?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.show_tooltips">
+<code class="descname">show_tooltips</code><span class="sig-paren">(</span><em>value=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.show_tooltips" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show tooltips?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.target">
+<code class="descname">target</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set target.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.transition_on_update">
+<code class="descname">transition_on_update</code><span class="sig-paren">(</span><em>value=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.transition_on_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transition on update?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.x_rug">
+<code class="descname">x_rug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.x_rug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.graphic.Graphic.y_rug">
+<code class="descname">y_rug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.graphic.Graphic.y_rug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.mg.histogram">
+<span id="pyxley-charts-mg-histogram-module"></span><h2>pyxley.charts.mg.histogram module<a class="headerlink" href="#module-pyxley.charts.mg.histogram" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.mg.histogram.Histogram">
+<em class="property">class </em><code class="descclassname">pyxley.charts.mg.histogram.</code><code class="descname">Histogram</code><span class="sig-paren">(</span><em>df</em>, <em>figure</em>, <em>column</em>, <em>bins</em>, <em>title='Histogram'</em>, <em>description='Histogram'</em>, <em>init_params={}</em>, <em>route_func=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.histogram.Histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.charts.mg.mg.MG" title="pyxley.charts.mg.mg.MG"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.mg.mg.MG</span></code></a></p>
+<p>Wrapper for MetricsGraphics Histogram plot.</p>
+<p><a class="reference external" href="https://github.com/mozilla/metrics-graphics/wiki/Histogram">https://github.com/mozilla/metrics-graphics/wiki/Histogram</a>
+The user must supply a Figure object. When a route_func
+is supplied, the dataframe and other options are ignored
+in favor of the endpoint function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>df</strong> (<em>dataframe</em>) &#8211; input data.</li>
+<li><strong>figure</strong> (<em>mg.Figure</em>) &#8211; metricsgraphics figure object.</li>
+<li><strong>column</strong> (<em>str</em>) &#8211; name of the column to histogram.</li>
+<li><strong>bins</strong> (<em>int</em>) &#8211; number of bins.</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; title of the figure.</li>
+<li><strong>description</strong> (<em>str</em>) &#8211; description of the figure.</li>
+<li><strong>init_params</strong> (<em>dict</em>) &#8211; parameters used to initialize the figure.</li>
+<li><strong>route_func</strong> (<em>function</em>) &#8211; endpoint function.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="staticmethod">
+<dt id="pyxley.charts.mg.histogram.Histogram.to_json">
+<em class="property">static </em><code class="descname">to_json</code><span class="sig-paren">(</span><em>df</em>, <em>column</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.histogram.Histogram.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format output for json response.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.mg.layout">
+<span id="pyxley-charts-mg-layout-module"></span><h2>pyxley.charts.mg.layout module<a class="headerlink" href="#module-pyxley.charts.mg.layout" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.mg.layout.Layout">
+<em class="property">class </em><code class="descclassname">pyxley.charts.mg.layout.</code><code class="descname">Layout</code><a class="headerlink" href="#pyxley.charts.mg.layout.Layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.charts.mg.mg.OptionHelper" title="pyxley.charts.mg.mg.OptionHelper"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.mg.mg.OptionHelper</span></code></a></p>
+<p>Layout options for the MetricsGraphics API.</p>
+<p><a class="reference external" href="https://github.com/mozilla/metrics-graphics/wiki/Layout">https://github.com/mozilla/metrics-graphics/wiki/Layout</a></p>
+<dl class="method">
+<dt id="pyxley.charts.mg.layout.Layout.get">
+<code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.layout.Layout.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get layout options.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.layout.Layout.set_margin">
+<code class="descname">set_margin</code><span class="sig-paren">(</span><em>top=40</em>, <em>bottom=30</em>, <em>left=50</em>, <em>right=10</em>, <em>buffer_size=8</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.layout.Layout.set_margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set margin of the chart.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>top</strong> (<em>int</em>) &#8211; size of top margin in pixels.</li>
+<li><strong>bottom</strong> (<em>int</em>) &#8211; size of bottom margin in pixels.</li>
+<li><strong>left</strong> (<em>int</em>) &#8211; size of left margin in pixels.</li>
+<li><strong>right</strong> (<em>int</em>) &#8211; size of right margin in pixels.</li>
+<li><strong>buffer_size</strong> (<em>int</em>) &#8211; buffer size in pixels between the chart and margins.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.layout.Layout.set_size">
+<code class="descname">set_size</code><span class="sig-paren">(</span><em>height=220</em>, <em>width=350</em>, <em>height_threshold=120</em>, <em>width_threshold=160</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.layout.Layout.set_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the size of the chart.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>height</strong> (<em>int</em>) &#8211; height in pixels.</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; width in pixels.</li>
+<li><strong>height_threshold</strong> (<em>int</em>) &#8211; height threshold in pixels</li>
+<li><strong>width_threshold</strong> (<em>int</em>) &#8211; width threshold in pixesls</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.mg.line_chart">
+<span id="pyxley-charts-mg-line-chart-module"></span><h2>pyxley.charts.mg.line_chart module<a class="headerlink" href="#module-pyxley.charts.mg.line_chart" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.mg.line_chart.LineChart">
+<em class="property">class </em><code class="descclassname">pyxley.charts.mg.line_chart.</code><code class="descname">LineChart</code><span class="sig-paren">(</span><em>df</em>, <em>figure</em>, <em>x</em>, <em>y</em>, <em>title='Line Chart'</em>, <em>description='Line Chart'</em>, <em>init_params={}</em>, <em>timeseries=False</em>, <em>route_func=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.line_chart.LineChart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.charts.mg.mg.MG" title="pyxley.charts.mg.mg.MG"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.mg.mg.MG</span></code></a></p>
+<p>Wrapper for MetricsGraphics Line plot.</p>
+<p><a class="reference external" href="https://github.com/mozilla/metrics-graphics/wiki/Chart-Types">https://github.com/mozilla/metrics-graphics/wiki/Chart-Types</a>
+The user must supply a Figure object. When a route_func
+is supplied, the dataframe and other options are ignored
+in favor of the endpoint function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>df</strong> (<em>dataframe</em>) &#8211; input data.</li>
+<li><strong>figure</strong> (<em>mg.Figure</em>) &#8211; metricsgraphics figure object.</li>
+<li><strong>x</strong> (<em>str</em>) &#8211; name of the column corresponding to the x-axis.</li>
+<li><strong>y</strong> (<em>list(str)</em>) &#8211; name of the columns corresponding to the y-axis.</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; title of the figure.</li>
+<li><strong>description</strong> (<em>str</em>) &#8211; description of the figure.</li>
+<li><strong>init_params</strong> (<em>dict</em>) &#8211; parameters used to initialize the figure.</li>
+<li><strong>timeseries</strong> (<em>bool</em>) &#8211; inidicates whether the plot is a timeseries.</li>
+<li><strong>route_func</strong> (<em>function</em>) &#8211; endpoint function.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="staticmethod">
+<dt id="pyxley.charts.mg.line_chart.LineChart.to_json">
+<em class="property">static </em><code class="descname">to_json</code><span class="sig-paren">(</span><em>df</em>, <em>x</em>, <em>y</em>, <em>timeseries=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.line_chart.LineChart.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format output for json response.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.mg.mg">
+<span id="pyxley-charts-mg-mg-module"></span><h2>pyxley.charts.mg.mg module<a class="headerlink" href="#module-pyxley.charts.mg.mg" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.mg.mg.MG">
+<em class="property">class </em><code class="descclassname">pyxley.charts.mg.mg.</code><code class="descname">MG</code><span class="sig-paren">(</span><em>chart_id</em>, <em>url</em>, <em>params</em>, <em>api_route</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.mg.MG" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyxley.charts.html#pyxley.charts.charts.Chart" title="pyxley.charts.charts.Chart"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.charts.Chart</span></code></a></p>
+<p>Base class for MetricsGraphics API.</p>
+<p>This class creates a MetricsGraphics component based on the supplied
+options.
+<a class="reference external" href="https://github.com/mozilla/metrics-graphics/wiki/List-of-Options">https://github.com/mozilla/metrics-graphics/wiki/List-of-Options</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>chart_id</strong> (<em>str</em>) &#8211; html element id.</li>
+<li><strong>url</strong> (<em>str</em>) &#8211; name of the endpoint to create.</li>
+<li><strong>params</strong> (<em>dict</em>) &#8211; parameters and options of the chart.</li>
+<li><strong>api_route</strong> (<em>function</em>) &#8211; endpoint function.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyxley.charts.mg.mg.OptionHelper">
+<em class="property">class </em><code class="descclassname">pyxley.charts.mg.mg.</code><code class="descname">OptionHelper</code><a class="headerlink" href="#pyxley.charts.mg.mg.OptionHelper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Option Base class for the MetricsGraphics API.</p>
+<dl class="method">
+<dt id="pyxley.charts.mg.mg.OptionHelper.set_boolean">
+<code class="descname">set_boolean</code><span class="sig-paren">(</span><em>option</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.mg.OptionHelper.set_boolean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a boolean option.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>option</strong> (<em>str</em>) &#8211; name of option.</li>
+<li><strong>value</strong> (<em>bool</em>) &#8211; value of the option.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code> &#8211;
+Value must be a boolean.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.mg.OptionHelper.set_float">
+<code class="descname">set_float</code><span class="sig-paren">(</span><em>option</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.mg.OptionHelper.set_float" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a float option.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>option</strong> (<em>str</em>) &#8211; name of option.</li>
+<li><strong>value</strong> (<em>float</em>) &#8211; value of the option.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code> &#8211;
+Value must be a float.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.mg.OptionHelper.set_integer">
+<code class="descname">set_integer</code><span class="sig-paren">(</span><em>option</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.mg.OptionHelper.set_integer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an integer option.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>option</strong> (<em>str</em>) &#8211; name of option.</li>
+<li><strong>value</strong> (<em>int</em>) &#8211; value of the option.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+Value must be an integer.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyxley.charts.mg.mg.OptionHelper.set_string">
+<code class="descname">set_string</code><span class="sig-paren">(</span><em>option</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.mg.OptionHelper.set_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a string option.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>option</strong> (<em>str</em>) &#8211; name of option.</li>
+<li><strong>value</strong> (<em>str</em>) &#8211; value of the option.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code> &#8211;
+Value must be a string.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.mg.scatter_plot">
+<span id="pyxley-charts-mg-scatter-plot-module"></span><h2>pyxley.charts.mg.scatter_plot module<a class="headerlink" href="#module-pyxley.charts.mg.scatter_plot" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.mg.scatter_plot.ScatterPlot">
+<em class="property">class </em><code class="descclassname">pyxley.charts.mg.scatter_plot.</code><code class="descname">ScatterPlot</code><span class="sig-paren">(</span><em>df</em>, <em>figure</em>, <em>x</em>, <em>y</em>, <em>title='Scatter Plot'</em>, <em>description='Scatter Plot'</em>, <em>init_params={}</em>, <em>route_func=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.scatter_plot.ScatterPlot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.charts.mg.mg.MG" title="pyxley.charts.mg.mg.MG"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.mg.mg.MG</span></code></a></p>
+<p>Wrapper for MetricsGraphics Scatter plot.</p>
+<p><a class="reference external" href="https://github.com/mozilla/metrics-graphics/wiki/Chart-Types">https://github.com/mozilla/metrics-graphics/wiki/Chart-Types</a>
+The user must supply a Figure object. When a route_func
+is supplied, the dataframe and other options are ignored
+in favor of the endpoint function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>df</strong> (<em>dataframe</em>) &#8211; input data.</li>
+<li><strong>figure</strong> (<em>mg.Figure</em>) &#8211; metricsgraphics figure object.</li>
+<li><strong>x</strong> (<em>str</em>) &#8211; name of the column corresponding to the x-axis.</li>
+<li><strong>y</strong> (<em>str</em>) &#8211; name of the column corresponding to the y-axis.</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; title of the figure.</li>
+<li><strong>description</strong> (<em>str</em>) &#8211; description of the figure.</li>
+<li><strong>init_params</strong> (<em>dict</em>) &#8211; parameters used to initialize the figure.</li>
+<li><strong>route_func</strong> (<em>function</em>) &#8211; endpoint function.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="staticmethod">
+<dt id="pyxley.charts.mg.scatter_plot.ScatterPlot.to_json">
+<em class="property">static </em><code class="descname">to_json</code><span class="sig-paren">(</span><em>df</em>, <em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.mg.scatter_plot.ScatterPlot.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format output for json response.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.mg">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyxley.charts.mg" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Nicholas Kridler.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.7',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

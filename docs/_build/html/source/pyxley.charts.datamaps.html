@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyxley.charts.datamaps package &mdash; pyxley 0.0.7 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="pyxley 0.0.7 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pyxley
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../why.html">Why Pyxley?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Core Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic.html">A Basic Pyxley App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../production.html">Pyxley In Production</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">pyxley</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>pyxley.charts.datamaps package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/source/pyxley.charts.datamaps.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyxley-charts-datamaps-package">
+<h1>pyxley.charts.datamaps package<a class="headerlink" href="#pyxley-charts-datamaps-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pyxley.charts.datamaps.datamaps">
+<span id="pyxley-charts-datamaps-datamaps-module"></span><h2>pyxley.charts.datamaps.datamaps module<a class="headerlink" href="#module-pyxley.charts.datamaps.datamaps" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.datamaps.datamaps.Datamap">
+<em class="property">class </em><code class="descclassname">pyxley.charts.datamaps.datamaps.</code><code class="descname">Datamap</code><span class="sig-paren">(</span><em>chart_id</em>, <em>url</em>, <em>params</em>, <em>api_route</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.datamaps.datamaps.Datamap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyxley.charts.html#pyxley.charts.charts.Chart" title="pyxley.charts.charts.Chart"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.charts.Chart</span></code></a></p>
+<p>Pyxley Datamaps Chart component.</p>
+<p>This is the base class for the PyxleyJS Datamaps wrapper.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; name of endpoint to transmit data.</li>
+<li><strong>chart_id</strong> &#8211; html element id.</li>
+<li><strong>params</strong> &#8211; parameters chart will be initialized with.</li>
+<li><strong>route_func</strong> &#8211; function called by the endpoint</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyxley.charts.datamaps.datamaps.DatamapUSA">
+<em class="property">class </em><code class="descclassname">pyxley.charts.datamaps.datamaps.</code><code class="descname">DatamapUSA</code><span class="sig-paren">(</span><em>url</em>, <em>chart_id</em>, <em>df</em>, <em>state_index</em>, <em>color_index</em>, <em>init_params={}</em>, <em>color_map={'gold': '#fc0'</em>, <em>'dark pink': '#e3489b'</em>, <em>'off-white': '#ffffdd'</em>, <em>'cobalt': '#56b3ff'</em>, <em>'pale yellow': '#ffff9d'</em>, <em>'teal': '#008080'</em>, <em>'light pink': '#ffd6d3'</em>, <em>'camel': '#c96'</em>, <em>'fuchsia': '#ff00ff'</em>, <em>'orange red': '#ff4500'</em>, <em>'black': '#000000'</em>, <em>'orange': '#ffc870'</em>, <em>'white': '#ffffff'</em>, <em>'brown': '#864'</em>, <em>'turquoise': '#40e0d0'</em>, <em>'soft orange': '#ffc63c'</em>, <em>'yellow': '#ffff00'</em>, <em>'olive': '#808000'</em>, <em>'silver': '#c0c0c0'</em>, <em>'gray': '#9c9c9c'</em>, <em>'grey': '#9c9c9c'</em>, <em>'light green': '#90ee90'</em>, <em>'antique silver': '#d7cdc4'</em>, <em>'burnt orange': '#cc5500'</em>, <em>'antique gold': '#fff4b0'</em>, <em>'navy': '#6c70ff'</em>, <em>'tan': '#d2b48c'</em>, <em>'light blue': '#add8e6'</em>, <em>'jewel tone purple': '#ae2cc6'</em>, <em>'pink': '#ffb6c1'</em>, <em>'purple': '#800080'</em>, <em>'burgundy': '#ff7272'</em>, <em>'defaultFills': 'black'</em>, <em>'other': '#111111'</em>, <em>'red': '#ff0000'</em>, <em>'blue': '#8084ff'</em>, <em>'mustard': '#ffe761'</em>, <em>'light purple': '#b0c4de'</em>, <em>'rose gold': '#ffba9d'</em>, <em>'dark purple': '#540061'</em>, <em>'dark grey': '#666666'</em>, <em>'teal green': '#a1dfc6'</em>, <em>'bronze': '#c95a0b'</em>, <em>'magenta': '#ff00ff'</em>, <em>'light grey': '#d3d3d3'</em>, <em>'coral': '#ff9e80'</em>, <em>'canary yellow': '#ffef00'</em>, <em>'green': '#83ff7f'</em>, <em>'beige': '#f5f5dc'</em>, <em>'dark green': '#006400'}</em>, <em>route_func=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.datamaps.datamaps.DatamapUSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.charts.datamaps.datamaps.Datamap" title="pyxley.charts.datamaps.datamaps.Datamap"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.datamaps.datamaps.Datamap</span></code></a></p>
+<p>Wrapper for PyxleyJS Datamaps component.</p>
+<p>By default, this class builds a simple endpoint function.
+This can be overriden by supplying a route_func. When
+a route_func has been supplied, only the url, init_params,
+and route_func will be used.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; name of endpoint to transmit data.</li>
+<li><strong>chart_id</strong> &#8211; html element id.</li>
+<li><strong>df</strong> &#8211; dataframe containing states and colors.</li>
+<li><strong>state_index</strong> &#8211; column name of dataframe containing states.</li>
+<li><strong>color_index</strong> &#8211; column name of dataframe containing colors.</li>
+<li><strong>init_params</strong> &#8211; parameters chart will be initialized with.</li>
+<li><strong>color_map</strong> &#8211; dictionary of color labels and hex values.</li>
+<li><strong>route_func</strong> &#8211; function called by the endpoint. default is None</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="staticmethod">
+<dt id="pyxley.charts.datamaps.datamaps.DatamapUSA.to_json">
+<em class="property">static </em><code class="descname">to_json</code><span class="sig-paren">(</span><em>df</em>, <em>state_index</em>, <em>color_index</em>, <em>fills</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.datamaps.datamaps.DatamapUSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms dataframe to json response</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.datamaps">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyxley.charts.datamaps" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Nicholas Kridler.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.7',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

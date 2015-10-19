@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyxley.charts.nvd3 package &mdash; pyxley 0.0.7 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="pyxley 0.0.7 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pyxley
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../why.html">Why Pyxley?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Core Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic.html">A Basic Pyxley App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../production.html">Pyxley In Production</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">pyxley</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>pyxley.charts.nvd3 package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/source/pyxley.charts.nvd3.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyxley-charts-nvd3-package">
+<h1>pyxley.charts.nvd3 package<a class="headerlink" href="#pyxley-charts-nvd3-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pyxley.charts.nvd3.nvd3">
+<span id="pyxley-charts-nvd3-nvd3-module"></span><h2>pyxley.charts.nvd3.nvd3 module<a class="headerlink" href="#module-pyxley.charts.nvd3.nvd3" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.nvd3.nvd3.NVD3">
+<em class="property">class </em><code class="descclassname">pyxley.charts.nvd3.nvd3.</code><code class="descname">NVD3</code><span class="sig-paren">(</span><em>opts</em>, <em>api_route</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.nvd3.nvd3.NVD3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyxley.charts.html#pyxley.charts.charts.Chart" title="pyxley.charts.charts.Chart"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.charts.Chart</span></code></a></p>
+<p>Base class for NVD3 Charts.</p>
+<p>This class is used to create charts from <a class="reference external" href="http://nvd3.org/">http://nvd3.org/</a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.nvd3.pie_chart">
+<span id="pyxley-charts-nvd3-pie-chart-module"></span><h2>pyxley.charts.nvd3.pie_chart module<a class="headerlink" href="#module-pyxley.charts.nvd3.pie_chart" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.nvd3.pie_chart.PieChart">
+<em class="property">class </em><code class="descclassname">pyxley.charts.nvd3.pie_chart.</code><code class="descname">PieChart</code><span class="sig-paren">(</span><em>values</em>, <em>df</em>, <em>init_params={}</em>, <em>chart_id='piechart'</em>, <em>url='/piechart/'</em>, <em>colors=[]</em>, <em>label_type='percent'</em>, <em>route_func=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.nvd3.pie_chart.PieChart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.charts.nvd3.nvd3.NVD3" title="pyxley.charts.nvd3.nvd3.NVD3"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.nvd3.nvd3.NVD3</span></code></a></p>
+<p>NVD3 Pie Chart</p>
+<p>Wrapper for the NVD3 pie chart implemented in PyxleyJS based on
+<a class="reference external" href="http://nvd3.org/examples/pie.html">http://nvd3.org/examples/pie.html</a>. When a route_func is supplied,
+the inputs are ignored in favor of the endpoint function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>values</strong> (<em>dict</em>) &#8211; labels of the pie chart.</li>
+<li><strong>df</strong> (<em>dataframe</em>) &#8211; chart data.</li>
+<li><strong>init_params</strong> (<em>dict</em>) &#8211; parameters used to initialize the chart.</li>
+<li><strong>chart_id</strong> &#8211; html element id.</li>
+<li><strong>url</strong> &#8211; name of the endpoint to be created.</li>
+<li><strong>colors</strong> (<em>list</em>) &#8211; list of colors to show in the chart.</li>
+<li><strong>label_type</strong> (<em>str</em>) &#8211; type of label to display.</li>
+<li><strong>route_func</strong> (<em>function</em>) &#8211; optional endpoint function.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="staticmethod">
+<dt id="pyxley.charts.nvd3.pie_chart.PieChart.to_json">
+<em class="property">static </em><code class="descname">to_json</code><span class="sig-paren">(</span><em>df</em>, <em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.nvd3.pie_chart.PieChart.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format output for the json response.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.nvd3.two_axis_focus">
+<span id="pyxley-charts-nvd3-two-axis-focus-module"></span><h2>pyxley.charts.nvd3.two_axis_focus module<a class="headerlink" href="#module-pyxley.charts.nvd3.two_axis_focus" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyxley.charts.nvd3.two_axis_focus.TwoAxisFocus">
+<em class="property">class </em><code class="descclassname">pyxley.charts.nvd3.two_axis_focus.</code><code class="descname">TwoAxisFocus</code><span class="sig-paren">(</span><em>x</em>, <em>y1</em>, <em>y2</em>, <em>data_source</em>, <em>init_params={}</em>, <em>chart_id='new_chart'</em>, <em>url='/new_chart/'</em>, <em>colors=[]</em>, <em>auto_scale='sigma'</em>, <em>y1_axis_range=[]</em>, <em>y2_axis_range=[]</em>, <em>sigma=3</em>, <em>x_label=''</em>, <em>y1_label=''</em>, <em>y2_label=''</em>, <em>margin={'top': 30</em>, <em>'right': 60</em>, <em>'left': 70</em>, <em>'bottom': 50}</em>, <em>route_func=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.nvd3.two_axis_focus.TwoAxisFocus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxley.charts.nvd3.nvd3.NVD3" title="pyxley.charts.nvd3.nvd3.NVD3"><code class="xref py py-class docutils literal"><span class="pre">pyxley.charts.nvd3.nvd3.NVD3</span></code></a></p>
+<p>NVD3 Two Axis Focus</p>
+<p>Wrapper for the cross-filter chart implemented in PyxleyJS based on
+<a class="reference external" href="http://nvd3.org/examples/linePlusBar.html">http://nvd3.org/examples/linePlusBar.html</a>. When a route_func is supplied,
+the inputs are ignored in favor of the endpoint function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>values</strong> (<em>dict</em>) &#8211; labels of the pie chart.</li>
+<li><strong>data_source</strong> (<em>dataframe</em>) &#8211; chart data.</li>
+<li><strong>x</strong> (<em>str</em>) &#8211; name of the column for the x-axis.</li>
+<li><strong>y1</strong> (<em>str</em>) &#8211; name of the column for the primary y-axis.</li>
+<li><strong>y2</strong> (<em>str</em>) &#8211; name of the column for the secondary y-axis.</li>
+<li><strong>init_params</strong> (<em>dict</em>) &#8211; parameters used to initialize the chart.</li>
+<li><strong>chart_id</strong> &#8211; html element id.</li>
+<li><strong>url</strong> &#8211; name of the endpoint to be created.</li>
+<li><strong>colors</strong> (<em>list</em>) &#8211; list of colors to show in the chart.</li>
+<li><strong>auto_scale</strong> (<em>str</em>) &#8211; select auto scale method.</li>
+<li><strong>y1_axis_range</strong> (<em>list</em>) &#8211; range of the primary y-axis.</li>
+<li><strong>y2_axis_range</strong> (<em>list</em>) &#8211; range of the secondary y-axis.</li>
+<li><strong>x_label</strong> (<em>str</em>) &#8211; label of the x-axis.</li>
+<li><strong>y1_label</strong> (<em>str</em>) &#8211; label of the primary axis.</li>
+<li><strong>y2_label</strong> (<em>str</em>) &#8211; label of the secondary axis.</li>
+<li><strong>margin</strong> (<em>dict</em>) &#8211; margins in pixels.</li>
+<li><strong>route_func</strong> (<em>function</em>) &#8211; optional endpoint function.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="staticmethod">
+<dt id="pyxley.charts.nvd3.two_axis_focus.TwoAxisFocus.get_bounds">
+<em class="property">static </em><code class="descname">get_bounds</code><span class="sig-paren">(</span><em>y</em>, <em>method='sigma'</em>, <em>sigma=3</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.nvd3.two_axis_focus.TwoAxisFocus.get_bounds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="pyxley.charts.nvd3.two_axis_focus.TwoAxisFocus.to_json">
+<em class="property">static </em><code class="descname">to_json</code><span class="sig-paren">(</span><em>df</em>, <em>x</em>, <em>y1</em>, <em>y2</em>, <em>y1_axis_range</em>, <em>y2_axis_range</em>, <em>auto_scale</em>, <em>sigma</em><span class="sig-paren">)</span><a class="headerlink" href="#pyxley.charts.nvd3.two_axis_focus.TwoAxisFocus.to_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyxley.charts.nvd3">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyxley.charts.nvd3" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Nicholas Kridler.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.7',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
