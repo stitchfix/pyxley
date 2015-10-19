@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='pyxley',
-    version='0.0.6',
+    version='0.0.7',
     author='Nicholas Kridler',
     author_email='nmkridler@gmail.com',
     license='MIT',
