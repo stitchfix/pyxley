@@ -21,10 +21,14 @@ An example of the Jinja template for a single React component is presented below
 By constructing the template in this way, the developer can easily integrate a custom React component. The only requirements are the props, elementId, and location of the React component.
 
 ## Documentation and Testing
+### Documentation
+Available at [readthedocs](http://pyxley.readthedocs.org/)
+
+### Testing
 Coming Soon!
 
 ## Python versions
-Currently only Python 2.7 is supported. Support for other versions coming soon.
+Currently supporting Python 2 and 3.
 
 ## Installation
 Install via pip
