@@ -26,7 +26,7 @@ scripts = [
     "./bower_components/datatables/media/js/jquery.dataTables.js",
     "./dataTables.fixedColumns.js",
     "./bower_components/d3/d3.min.js",
-    "./bower_components/require/build/require.min.js",
+    "./require.min.js",
     "./bower_components/react/react.js",
     "./bower_components/react-bootstrap/react-bootstrap.min.js",
     "./conf_int.js",
@@ -91,6 +91,7 @@ tb = DataTable("mytable", "/mytable/", df,
 
 app = Flask(__name__)
 tb.register_route(app)
+
 
 ui = SimpleComponent(
     "Table",

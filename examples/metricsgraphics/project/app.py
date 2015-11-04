@@ -24,7 +24,7 @@ scripts = [
     "./bower_components/datatables/media/js/jquery.dataTables.js",
     "./bower_components/d3/d3.min.js",
     "./bower_components/metrics-graphics/dist/metricsgraphics.js",
-    "./bower_components/require/build/require.min.js",
+    "./require.min.js",
     "./bower_components/react/react.js",
     "./bower_components/react-bootstrap/react-bootstrap.min.js",
     "./bower_components/pyxley/build/pyxley.js",

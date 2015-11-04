@@ -23,7 +23,7 @@ scripts = [
     "./bower_components/d3/d3.min.js",
     "./bower_components/topojson/topojson.js",
     "./bower_components/datamaps/dist/datamaps.usa.min.js",
-    "./bower_components/require/build/require.min.js",
+    "./require.min.js",
     "./bower_components/react/react.js",
     "./bower_components/react-bootstrap/react-bootstrap.min.js",
     "./bower_components/pyxley/build/pyxley.js",

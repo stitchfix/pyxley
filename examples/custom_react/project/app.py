@@ -27,7 +27,7 @@ scripts = [
     "./bower_components/d3/d3.min.js",
     "./bower_components/nvd3/build/nv.d3.js",
     "./chartfunc.js",
-    "./bower_components/require/build/require.min.js",
+    "./require.min.js",
     "./bower_components/react/react.js",
     "./bower_components/react-bootstrap/react-bootstrap.min.js",
     "./bower_components/pyxley/build/pyxley.js",
