@@ -21,7 +21,7 @@ class BarChart(MG):
 
     """
     def __init__(self, df, figure, x, y, title="Bar Chart",
-        description="Line Chart", init_params={},
+        description="Bar Chart", init_params={},
         route_func=None):
 
         self.plot_opts = {
