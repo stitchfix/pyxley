@@ -1,0 +1,16 @@
+
+.pyx-slider {
+  width: 200px !important;
+}
+
+.pyDataMap {
+    position: middle;
+    height: 500px;
+    width: 800px;
+  }
+
+body {
+  font-style:normal;
+  font-family:"BrandonText-Regular", sans-serif;
+}
+
