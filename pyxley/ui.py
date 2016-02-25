@@ -124,7 +124,7 @@ class UILayout(object):
             if c.route_func:
                 c.register_route(app)
 
-    def render_layout(self, app, path):
+    def render_layout(self, app, path, alias=None):
         """Transform the jsx and write to javascript."""
         self.assign_routes(app)
         return ReactComponent(
@@ -132,4 +132,5 @@ class UILayout(object):
             self.src_file,
             self.component_id,
             props=self.build_props(),
-            static_path=path)
+            static_path=path,
+            alias=alias)
