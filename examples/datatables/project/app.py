@@ -22,24 +22,14 @@ args = parser.parse_args()
 TITLE = "Pyxley"
 
 scripts = [
-    "./bower_components/jquery/dist/jquery.min.js",
-    "./bower_components/datatables/media/js/jquery.dataTables.js",
-    "./dataTables.fixedColumns.js",
-    "./bower_components/d3/d3.min.js",
-    "./require.min.js",
-    "./bower_components/react/react.js",
-    "./bower_components/react-bootstrap/react-bootstrap.min.js",
-    "./conf_int.js",
-    "./bower_components/pyxley/build/pyxley.js"
+    "./conf_int.js"
     ]
 
 css = [
-    "./bower_components/bootstrap/dist/css/bootstrap.min.css",
-    "./bower_components/datatables/media/css/jquery.dataTables.min.css",
     "./css/main.css"
 ]
 
-df = pd.DataFrame(json.load(open("./static/data.json", "r")))
+df = pd.DataFrame(json.load(open("./project/static/data.json", "r")))
 df = df.dropna()
 df["salary"] = df["salary"].apply(lambda x: float(re.sub("[^\d\.]", "", x)))
 df["lower"] = ( 1. - (0.03*np.random.randn(df.shape[0]) + 0.15))
@@ -95,12 +85,23 @@ tb.register_route(app)
 
 ui = SimpleComponent(
     "Table",
-    "./static/bower_components/pyxley/build/pyxley.js",
+    "pyxley",
     "component_id",
     tb.params
 )
 
-sb = ui.render("./static/layout.js")
+sb = ui.render("./project/static/layout.js")
+
+# Create a webpack file and bundle our javascript
+from pyxley.utils import Webpack
+wp = Webpack(".")
+wp.create_webpack_config(
+    "layout.js",
+    "./project/static/",
+    "bundle",
+    "./project/static/"
+)
+wp.run()
 
 @app.route('/test', methods=["GET"])
 def testtest():
@@ -110,7 +111,7 @@ def testtest():
 @app.route('/index', methods=["GET"])
 def index():
     _scripts = [
-        "./layout.js"
+        "./bundle.js", "./dataTables.fixedColumns.js"
         ]
     return render_template('index.html',
         title=TITLE,
