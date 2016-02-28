@@ -1,0 +1,23 @@
+
+from pyxley.utils import Webpack, NPM
+
+import logging
+logger = logging.getLogger('pyxapp')
+logging.basicConfig(format='[%(levelname)s] %(asctime)s %(name)s(%(lineno)s): %(message)s')
+logger.setLevel('INFO')
+
+import argparse
+parser = argparse.ArgumentParser(description="Pyxley Command Line Helper")
+parser.add_argument('--init', help="Initialize a pyxley app at the provided location")
+
+args = parser.parse_args()
+logger.info('args:{}'.format(args))
+
+def do_init(args):
+    npm = NPM(args.init)
+    logger.info("Installing NPM Packages")
+    npm.run()
+
+if __name__ == "__main__":
+    if args.init:
+        do_init(args)
