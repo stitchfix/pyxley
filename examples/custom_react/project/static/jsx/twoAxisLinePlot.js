@@ -1,25 +1,20 @@
+import React from 'react';
+
 var timeFormat = d3.time.format("%I:%M %p %a %Y");
 
-var TwoAxisLinePlot = React.createClass({
-    getDefaultProps: function() {
-        return {
-            url: "",
-            chartid: "chart",
-            colors: React.PropTypes.array,
-            margin: {top: 30, right: 60, bottom: 50, left: 70},
-            labels: {xAxis: "", yAxis1: "", yAxis2: ""},
-            limits: {yAxis1: null, yAxis2: null}
-        };
-    },
-    getInitialState: function() {
-        return {
+class TwoAxisLinePlot extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             chart: null
         };
-    },
-    componentDidMount: function() {
+    }
+
+    componentDidMount() {
         this.setState({chart: this._initGraph(this.state.chart)});
-    },
-    _initGraph: function(chart) {
+    }
+
+    _initGraph(chart) {
         chart = twoAxisFocusChart()
             .margin(this.props.margin)
             .color(this.props.colors);
@@ -72,8 +67,9 @@ var TwoAxisLinePlot = React.createClass({
         nv.utils.windowResize(function() { chart.update() });
 
         return chart;
-    },
-    update: function(params) {
+    }
+
+    update(params) {
 
         var sig = 5;
         d3.json(this.props.url.concat("?", $.param(params)),
@@ -101,8 +97,9 @@ var TwoAxisLinePlot = React.createClass({
                 nv.utils.windowResize(function() { this.state.chart.update() });
 
         }.bind(this));
-    },
-    render: function() {
+    }
+
+    render() {
         return (
             <div>
             <h2>{this.props.title}</h2>
@@ -110,6 +107,15 @@ var TwoAxisLinePlot = React.createClass({
             </div>
         );
     }
-});
+}
 
-module.exports.TwoAxisLinePlot = TwoAxisLinePlot;
+TwoAxisLinePlot.defaultProps = {
+    url: "",
+    chartid: "chart",
+    colors: React.PropTypes.array,
+    margin: {top: 30, right: 60, bottom: 50, left: 70},
+    labels: {xAxis: "", yAxis1: "", yAxis2: ""},
+    limits: {yAxis1: null, yAxis2: null}
+};
+
+export {TwoAxisLinePlot};

@@ -1,6 +1,7 @@
-var Navbar = ReactBootstrap.Navbar;
-var NavItem = ReactBootstrap.NavItem;
-var Nav = ReactBootstrap.Nav;
+
+import {Navbar, NavItem, Nav} from 'react-bootstrap';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 const navbarInstance = (
     <Navbar brand="Pyxley" inverse toggleNavKey={0}>
@@ -9,4 +10,4 @@ const navbarInstance = (
     </Navbar>
 );
 
-React.render(navbarInstance, document.getElementById('navbarid'));
+ReactDOM.render(navbarInstance, document.getElementById('navbarid'));
