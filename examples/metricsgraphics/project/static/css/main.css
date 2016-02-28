@@ -36,20 +36,20 @@ table.display thead th {
 }
 
 .mg-line1-color {
-    stroke: #7bc9c1;
+    stroke: #7bc9c1 !important;
 }
 
 .mg-area1-color {
-    fill: #7bc9c1;
+    fill: #7bc9c1 !important;
 }
 
 .mg-histogram .mg-bar rect.active {
-    fill: #7bc9c1;
+    fill: #7bc9c1 !important;
 }
 
 .mg-histogram .mg-bar rect {
-    fill:  #7bc9c1 ;
-    shape-rendering: auto;
+    fill:  #7bc9c1 !important;
+    shape-rendering: auto !important;
 }
 
 
