@@ -20,5 +20,8 @@ setup(
         'pyreact',
         'flask',
         'pandas'
+    ],
+    scripts = [
+        "bin/pyxapp"
     ]
 )
