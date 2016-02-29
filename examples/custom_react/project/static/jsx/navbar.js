@@ -4,9 +4,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const navbarInstance = (
-    <Navbar brand="Pyxley" inverse toggleNavKey={0}>
-    <Nav right eventKey={0}>
-    </Nav>
+    <Navbar inverse>
+        <Navbar.Header>
+        <Navbar.Brand>Pyxley</Navbar.Brand>
+        </Navbar.Header>
+        <Nav pullRight eventKey={0}></Nav>
     </Navbar>
 );
 
