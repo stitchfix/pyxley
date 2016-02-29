@@ -49,7 +49,8 @@ class NPM(object):
         "sass-loader": "^3.1.2",
         "style-loader": "^0.13.0",
         "webpack": "^1.12.13",
-        "webpack-dev-server": "^1.14.1"
+        "webpack-dev-server": "^1.14.1",
+        "pyxley": "^0.0.4"
     }
     def __init__(self, repo_root):
         self.repo_root = repo_root
