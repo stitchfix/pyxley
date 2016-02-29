@@ -6,7 +6,7 @@ import sys
 import json
 
 from ..react_template import ReactTemplate
-from npm import run
+from .npm import run
 from subprocess import check_call
 
 class Webpack(object):
@@ -19,7 +19,7 @@ class Webpack(object):
               '{{include_path}}/{{entry_point}}'
           ],
           output: {
-            path: '{{output_path}}',
+            path: path.join(__dirname,'{{output_path}}'),
             sourceMapFilename: '{{output_name}}.map',
             filename: '{{output_name}}.js'
           },
@@ -34,7 +34,7 @@ class Webpack(object):
             loaders: [
               {
                 test: /\.js?$/,
-                include: path.join(__dirname, '{{include_path}}'),
+                include: path.join(__dirname,'{{include_path}}'),
                 loader: ['babel-loader'],
                 exclude: /node_modules/,
                 query: {
@@ -54,7 +54,11 @@ class Webpack(object):
         plugins: [
                 new webpack.ProvidePlugin({
                   $: "jquery",
-                  jQuery: "jquery"
+                  jQuery: "jquery",
+                  MG: "metrics-graphics",
+                  Datamap: "datamaps",
+                  Plotly: "plotly.js",
+                  nv: "nvd3"
                 })
             ]
         };

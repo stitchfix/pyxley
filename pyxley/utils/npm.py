@@ -8,7 +8,7 @@ from ..react_template import ReactTemplate
 from subprocess import check_call
 
 def run(cmd, *args, **kwargs):
-    """Echo a command before running it"""
+    """"""
     kwargs["shell"] = (sys.platform == "win32")
     return check_call(cmd, *args, **kwargs)
 
@@ -38,6 +38,10 @@ class NPM(object):
         "jquery": "^2.2.0",
         "node-sass": "^3.3.3",
         "nvd3": "^1.8.2",
+        "datamaps": "^0.4.4",
+        "metrics-graphics": "^2.8.0",
+        "datatables": "^1.10.7",
+        "plotly.js": "^1.5.2",
         "react": "^0.14.7",
         "react-bootstrap": "^0.28.3",
         "react-dom": "^0.14.7",
