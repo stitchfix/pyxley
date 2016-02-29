@@ -165,4 +165,3 @@ class DynamicTextInput(Filter) :
             "DynamicSearch",
             opts,
             route_func)
-
