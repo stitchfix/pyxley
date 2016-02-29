@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='pyxley',
-    version='0.0.7',
+    version='0.0.8',
     author='Nicholas Kridler',
     author_email='nmkridler@gmail.com',
     license='MIT',
@@ -17,7 +17,6 @@ setup(
         'Intended Audience :: Developers',
     ],
     install_requires=[
-        'pyreact',
         'flask',
         'pandas'
     ],
