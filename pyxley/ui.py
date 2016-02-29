@@ -81,7 +81,9 @@ class UILayout(object):
             filter_style (str): css for filters
 
     """
-    def __init__(self, layout, src_file, component_id, dynamic=True, filter_style="'btn-group'"):
+    def __init__(self, layout, src_file, component_id, dynamic=True,
+        filter_style="'btn-group'"):
+        
         self.layout = layout
         self.src_file = src_file
         self.component_id = component_id
@@ -124,12 +126,13 @@ class UILayout(object):
             if c.route_func:
                 c.register_route(app)
 
-    def render_layout(self, app, path):
-        """Transform the jsx and write to javascript."""
+    def render_layout(self, app, path, alias=None):
+        """Write to javascript."""
         self.assign_routes(app)
         return ReactComponent(
             self.layout,
             self.src_file,
             self.component_id,
             props=self.build_props(),
-            static_path=path)
+            static_path=path,
+            alias=alias)

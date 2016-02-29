@@ -6,22 +6,13 @@ library for time-series data.
 Make sure pyxley is installed first (run `python setup.py install`).
 
 ## NPM
-Install NPM (e.g brew install node). Then run `npm install -g` in the directory containing
-package.json. `-g` will make bower available globally.
+Install NPM (e.g brew install node).
 
-### Bower
-Create a file called `.bowerrc` containing
-```json
-{
-    "directory": "./project/static/bower_components"
-}
-```
-This will tell bower where to install the packages.
+## `pyxapp`
+With the latest version of Pyxley comes a command line helper.
 
-Now run `bower install` to install the bower components.
+Type `pyxapp --init .` to initialize the folder. It will install
+all of the dependencies in `package.json`.
 
 # Flask
-Run `python app.py`.
-
-
-
+Run `python project/app.py`.

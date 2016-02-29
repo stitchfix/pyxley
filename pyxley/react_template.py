@@ -1,4 +1,3 @@
-from react import jsx
 from jinja2 import Template
 import json
 
@@ -15,7 +14,6 @@ class ReactTemplate(object):
             path (str): path of the file to create.
     """
     def __init__(self, template, template_args, path):
-        self.transformer = jsx.JSXTransformer()
         self.template = template
         self.args = template_args
         self.path = path
@@ -31,10 +29,10 @@ class ReactTemplate(object):
         """
         """
         t = Template(self.template)
-        js = self.transformer.transform_string(t.render(**self.args))
+        js = t.render(**self.args)
         self.write_to_file(js)
 
-def format_props(props):
+def format_props(props, prop_template="{{k}} = { {{v}} }", delim="\n"):
     """ Formats props for the React template.
 
         Args:
@@ -49,8 +47,8 @@ def format_props(props):
     props_ = []
     for k, v in list(props.items()):
         vars_.append(Template("var {{k}} = {{v}};").render(k=k,v=json.dumps(v)))
-        props_.append(Template("{{k}} = {{v}}").render(k=k, v="{"+k+"}"))
-    return "\n".join(vars_), "\n".join(props_)
+        props_.append(Template(prop_template).render(k=k, v=k))
+    return "\n".join(vars_), delim.join(props_)
 
 
 class ReactComponent(ReactTemplate):
@@ -69,19 +67,59 @@ class ReactComponent(ReactTemplate):
     """
     _react = (
     """
-    var Component = require("{{path}}").{{name}};
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import { {{name}} as Component} from '{{path}}';
     {{vars}}
-    React.render(
+    ReactDOM.render(
         <Component
         {{props}} />,
         document.getElementById("{{id}}")
     );
     """)
-    def __init__(self, name, path, element_id, props={}, static_path=""):
-        vars_, props_ = format_props(props)
+
+    _react_export = (
+    """
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import { {{name}} as Component} from '{{path}}';
+
+    {{vars}}
+
+    class {{alias}} extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+
+        render() {
+            return (
+                <Component { ...this.props } />
+            );
+        }
+    }
+    {{alias}}.defaultProps = {
+        {{props}}
+    };
+    export default {{alias}};
+
+    """)
+    def __init__(self, name, path, element_id,
+        props={}, static_path="", alias=None):
+
+        _template = self._react
+        prop_template = "{{k}} = { {{v}} }"
+        delim = "\n"
+        if alias:
+            prop_template = "{{k}} : {{v}}"
+            delim = ",\n"
+            _template = self._react_export
+
+        vars_, props_ = format_props(props,
+            prop_template=prop_template, delim=delim)
 
         params = {
             "name": name,
+            "alias": alias,
             "path": path,
             "vars": vars_,
             "props": props_,
@@ -91,7 +129,5 @@ class ReactComponent(ReactTemplate):
             params[k] = v
 
         super(ReactComponent, self).__init__(
-            self._react, params, static_path)
+            _template, params, static_path)
         self.to_js()
-
-

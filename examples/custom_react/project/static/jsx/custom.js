@@ -1,17 +1,14 @@
-var Button = ReactBootstrap.Button;
-var Filter = require('../bower_components/pyxley/build/pyxley').Filter;
-var Row = ReactBootstrap.Row;
-var Chart = require('./twoAxisLinePlot').TwoAxisLinePlot;
+import React from 'react';
+import {Button, Row} from 'react-bootstrap';
+import {Filter} from 'pyxley';
+import {TwoAxisLinePlot as Chart} from './twoAxisLinePlot';
 
-const RunLayout  = React.createClass({
-    getDefaultProps: function() {
-        return {
-            filters: React.PropTypes.array,
-            charts: React.PropTypes.array,
-            dynamic: React.PropTypes.string
-        };
-    },
-    _handleClick: function(input) {
+class RunLayout extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    _handleClick(input) {
         var params = {};
         for(var i = 0; i < this.props.filters.length; i++){
             var vals = this.refs["filter_".concat(i)].refs.filter.getCurrentState();
@@ -28,13 +25,15 @@ const RunLayout  = React.createClass({
             this.refs["chart_".concat(i)].update(params);
         }
         return params;
-    },
-    render: function(){
+    }
+
+    render() {
         var items = this.props.filters.map(function(x, index){
             return(<Filter
                 ref={"filter_".concat(index)}
-                onChange={this._handleClick}
+                onChange={this._handleClick.bind(this)}
                 dynamic={this.props.dynamic}
+                id={"filter_".concat(index)}
                 type={x.type} options={x.options}/>);
         }.bind(this));
 
@@ -49,7 +48,8 @@ const RunLayout  = React.createClass({
             <div>
                 <Row>
                 <div>
-                {this.props.dynamic ? null : <Button onClick={this._handleClick} >Update!</Button>}
+                {this.props.dynamic ? null :
+                    <Button onClick={this._handleClick.bind(this)} >Update!</Button>}
                 {items}
                 </div>
                 </Row>
@@ -59,6 +59,6 @@ const RunLayout  = React.createClass({
             </div>
             );
     }
-});
+}
 
-module.exports.RunLayout = RunLayout;
+export {RunLayout};
