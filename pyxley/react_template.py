@@ -69,7 +69,7 @@ class ReactComponent(ReactTemplate):
     """
     import React from 'react';
     import ReactDOM from 'react-dom';
-    import { {{name}} as Component} from './{{path}}';
+    import { {{name}} as Component} from '{{path}}';
     {{vars}}
     ReactDOM.render(
         <Component
@@ -82,7 +82,7 @@ class ReactComponent(ReactTemplate):
     """
     import React from 'react';
     import ReactDOM from 'react-dom';
-    import { {{name}} as Component} from './{{path}}';
+    import { {{name}} as Component} from '{{path}}';
 
     {{vars}}
 

@@ -1,4 +1,4 @@
-from react_template import ReactTemplate
+from .react_template import ReactTemplate
 
 def get_property(x, prop):
     props = []
