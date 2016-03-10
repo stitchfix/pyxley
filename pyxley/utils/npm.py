@@ -50,7 +50,7 @@ class NPM(object):
         "style-loader": "^0.13.0",
         "webpack": "^1.12.13",
         "webpack-dev-server": "^1.14.1",
-        "pyxley": "^0.0.4"
+        "pyxley": "^0.0.6"
     }
     def __init__(self, repo_root):
         self.repo_root = repo_root
