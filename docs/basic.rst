@@ -32,47 +32,17 @@ JavaScript!
 Node & NPM
 ^^^^^^^^^^
 
-At the highest level, Node is our biggest JavaScript dependency. PyReact
-needs a JavaScript runtime and Node fills that role. In addition, we
-can use `NPM <https://www.npmjs.com>`_ to install Bower. This document
+At the highest level, Node is our biggest JavaScript dependency.
+All of the JavaScript dependencies are managed via
+`NPM  <https://www.npmjs.com>`_. This document
 won't show you how to get Node or NPM, but for Mac OS X users, you can
 get it through homebrew.
 
-Once you have NPM, simply type
-
-::
-
-    npm install -g bower
-
-This will give bower global access so that you can execute it.
-
-Bower
-^^^^^
-
-`Bower <http://bower.io/>`_ is a great package manager. In the examples
-directory, each of the examples has a ``bower.json`` file. This file
-contains all the necessary packages for the app to run. Install the
-packages by typing ``bower install`` in the directory of the ``bower.json``
-file. There is a file called ``.bowerrc`` that specifies the location that
-bower will store the libraries.
-
-
-If the ``.bowerrc`` file looks like
-
-::
-
-    {
-        "directory": "./project/static/bower_components"
-    }
-
-Then the folder structure in static should look like the figure below after installation.
-
-::
-
-    └---static
-        |   css
-        |   js
-        |   bower_components
+Note: Prior to version 0.0.9, Bower was used to manage dependencies.
+In an effort to simplify the massive amount of dependencies, NPM
+will be used as the primary package manager and Bower is completely
+optional. In addition, PyReact has been deprecated and will no longer
+be used to transpile the jsx code.
 
 
 HTML & CSS
@@ -165,21 +135,42 @@ below will add a dropdown select button and a line plot.
     lc = LineChart(sf, fig, "Date", ["value"], init_params={"Data": "Steps"}, timeseries=True)
     ui.add_chart(lc)
 
-Finally, we need to transform all of the inputs into javascript and render the HTML template.
-This assumes that the ``index.html`` template has all of the javascript and css files specified
-in the HTML.
+Now that our ``ui`` object is full of filters and charts, we need
+to write out the JavaScript and transpile the jsx code. Previously,
+we used PyReact, but unfortunately that has been deprecated. Instead,
+we rely on ``webpack``. We have written a wrapper for ``webpack`` that does
+the bundling for us.
 
 ::
+    sb = ui.render_layout(app, "./project/static/layout.js")
 
-    sb = ui.render_layout(app, "./static/layout.js")
+    # Create a webpack file and bundle our javascript
+    from pyxley.utils import Webpack
+    wp = Webpack(".")
+    wp.create_webpack_config(
+        "layout.js",
+        "./project/static/",
+        "bundle",
+        "./project/static/"
+    )
+    wp.run()
 
     @app.route('/', methods=["GET"])
+    @app.route('/index', methods=["GET"])
     def index():
-        return render_template('index.html')
-
+        _scripts = ["./bundle.js"]
+        css = ["./css/main.css"]
+        return render_template('index.html',
+            title=TITLE,
+            base_scripts=[],
+            page_scripts=_scripts,
+            css=css)
     if __name__ == '__main__':
         app.run()
 
+``wp.run()`` will transpile "./project/static/layout.js" with the
+necessary dependencies and produce "bundle.js". If you had further
+dependencies not managed by NPM, you could include them in the
+``base_scripts`` keyword argument. 
+
 Now when you run ``app.py`` from the ``project`` folder, accessing your localhost on port 5000 will lead to a simple plot. This example was adapted from the `metricsgraphics example in the <https://github.com/stitchfix/pyxley/blob/master/examples/metricsgraphics/project/app.py>`_ Pyxley repository.
-
-
