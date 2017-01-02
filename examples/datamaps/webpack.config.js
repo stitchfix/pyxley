@@ -4,7 +4,7 @@
 
         module.exports = {
           entry: [
-              './project/static/layout.js'
+              './project/static//layout.js'
           ],
           output: {
             path: path.join(__dirname,'./project/static/'),
@@ -44,7 +44,10 @@
                   $: "jquery",
                   jQuery: "jquery",
                   MG: "metrics-graphics",
-                  Datamap: "datamaps"
+                  Datamap: "datamaps",
+                  Plotly: "plotly.js",
+                  nv: "nvd3"
                 })
             ]
         };
+    
