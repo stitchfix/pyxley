@@ -1,6 +1,6 @@
 
 from .mg import MG
-
+from flask import jsonify
 class ScatterPlot(MG):
     """Wrapper for MetricsGraphics Scatter plot.
 
