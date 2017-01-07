@@ -7,4 +7,4 @@ SliderInput = filters.SliderInput
 SelectButton = filters.SelectButton
 ApiButton = filters.ApiButton
 DynamicTextInput = filters.DynamicTextInput
-
+ReactSelect = filters.ReactSelect

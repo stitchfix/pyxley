@@ -165,3 +165,38 @@ class DynamicTextInput(Filter) :
             "DynamicSearch",
             opts,
             route_func)
+
+class ReactSelect(Filter):
+    """ react-select wrapper
+
+        This is a wrapper for the react-select library
+        http://jedwatson.github.io/react-select/
+
+        Args:
+            url (str): name of endpoint to create.
+            filter_id (str): alias of the filter.
+            default (str): default selection.
+            route_func (function): endpoint function to serve the options.
+            placeholder (str): default text.
+            extra_args (dict): extra props.
+    """
+    def __init__(self, url, filter_id, default, route_func,
+            placeholder="Enter text...", extra_args={}):
+        opts = {
+            "url": url,
+            "alias": filter_id,
+            "default": default,
+            "options": {
+                "placeholder": placeholder
+            }
+        }
+        for arg in extra_args:
+            opts["options"][arg] = extra_args[arg]
+
+        super(ReactSelect, self).__init__("ReactSelect", opts, route_func)
+
+    @staticmethod
+    def format_options(opts):
+        return {
+            "data": [{"label": k, "value": k} for k in opts]
+        }
