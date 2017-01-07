@@ -1,13 +1,26 @@
 
 from pyxley.filters import *
 
+def get_react_select():
+    """ react-select component
+
+        get a dropdown using the react-select library
+    """
+    return ReactSelect(
+        "/api/react-select/",
+        "react_select",
+        "",
+        None,
+        "Select something...",
+        extra_args={
+            "multi": True
+        }
+    )
+
 def get_api_button():
     """ basic api button
 
         get a dropdown populated by an api
-
-        Args:
-            url (str): endpoint to call upon click.
     """
     return ApiButton(
         "Api Button",

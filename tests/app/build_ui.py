@@ -25,7 +25,8 @@ def get_filter_props():
         get_select_button(),
         get_api_button(),
         get_slider_input(),
-        get_download_button()
+        get_download_button(),
+        get_react_select()
     ]
     _props = build_filter_props(_buttons)
 
