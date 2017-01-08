@@ -83,7 +83,7 @@ class UILayout(object):
     """
     def __init__(self, layout, src_file, component_id, dynamic=True,
         filter_style="'btn-group'"):
-        
+
         self.layout = layout
         self.src_file = src_file
         self.component_id = component_id
