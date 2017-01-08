@@ -1,5 +1,7 @@
 from components.filters import *
 from components.metricsgraphics import make_mg_layout
+from components.plotly import make_plotly_ui
+
 from pyxley import UILayout
 
 def build_filter_props(buttons):
@@ -48,7 +50,16 @@ def get_layouts(mod):
     mg_ui.assign_routes(mod)
     mg_props = mg_ui.build_props()
     mg_props["title"] = "Metricsgraphics"
+
+    # plotly
+    plotly_ui = make_plotly_ui()
+    plotly_ui.assign_routes(mod)
+    plotly_props = plotly_ui.build_props()
+    plotly_props["title"] = "Plotly.js"
+
+
     return [
         filters_only,
-        mg_props
+        mg_props,
+        plotly_props
     ]

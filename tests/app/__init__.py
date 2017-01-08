@@ -32,7 +32,7 @@ def index():
         page_scripts=["./bundle.js"],
         base_scripts=[],
         css=["./css/main.css"],
-        title="Plotly Example")
+        title="Pyxley Tests")
 
 if __name__ == "__main__":
     app.run(debug=True)
