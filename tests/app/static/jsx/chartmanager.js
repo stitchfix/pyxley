@@ -13,9 +13,11 @@ class ChartManager extends React.Component {
         if (this.props.layouts.length > 0) {
             components = this.props.layouts.map(function(x, index) {
                 return (
-                    <Row>
+                    <Row key={'chart_row_'.concat(index)}>
                     <h1>{x.title}</h1>
                     <PyxleyChart
+                        id={'pyxley_chart_'.concat(index)}
+                        key={'pyxley_chart_'.concat(index)}
                         filters={x.filters}
                         charts={x.charts} />
                     <br/>
@@ -26,7 +28,7 @@ class ChartManager extends React.Component {
         }
 
         return (
-            <div>
+            <div id={'chart_manager_base'}>
                 {components}
             </div>
         );

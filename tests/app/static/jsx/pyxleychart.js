@@ -50,7 +50,7 @@ class PyxleyChart extends React.Component {
         if (prop_filters.length > 0) {
             filters = prop_filters.map(function(x, index){
                 return (
-                    <div>
+                    <div key={'div_filter_'.concat(index)}>
                     {x.label ? <h2>{x.label}</h2> : null}
                     <Filter
                         ref={'filter_'.concat(index)}
@@ -75,6 +75,7 @@ class PyxleyChart extends React.Component {
                     <Chart
                         ref={'chart_'.concat(index)}
                         id={"chart_".concat(index)}
+                        key={"chart_".concat(index)}
                         type={x.type}
                         options={x.options}/>
                     );
