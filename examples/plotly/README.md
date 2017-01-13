@@ -1,13 +1,13 @@
 # Plot.ly example
 
-# How to Install
-Make sure pyxley is installed first (run `python setup.py install`).
-
-## NPM
-Install NPM (e.g brew install node).
-
-## Initialize
-Initialize the directory with `pyxapp --init .`.
-
-# Flask
+## How To Run
 Run `python demo/__init__.py`.
+
+## What's In Here?
+This app demonstrates how to use the `PlotlyAPI` chart type. It uses
+the `PlotlyAPI.line_plot` method to transform data from a `pandas.DataFrame`
+into a simple line plot.
+
+Unlike other charts, this api does not have a default method for
+transmitting the data from the `DataFrame`. Instead, it is supplied in
+the function `demo/buildui.py`. 
