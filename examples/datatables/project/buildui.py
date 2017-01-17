@@ -39,10 +39,6 @@ def create_datatable(df, tablename="mytable"):
 
     addfunc = (
     """
-        new $.fn.dataTable.FixedColumns(this, {{
-            leftColumns: 1,
-            rightColumns: 0
-        }});
         confidence_interval(this.api().column(3,
             {{"page":"current"}}).data(), "{tablename}");
     """.format(tablename=tablename))

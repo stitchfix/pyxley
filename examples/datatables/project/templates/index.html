@@ -6,6 +6,10 @@
   <head>
     <title>{{title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
     {% for s in css %}
     <link href={{ url_for('static', filename=s) }} rel="stylesheet" media="screen">
     {% endfor %}
