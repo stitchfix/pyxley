@@ -64,7 +64,7 @@ def create_datatable(df, tablename="mytable"):
 def make_table_layout(filename):
     df = get_data(filename)
 
-    ui = UILayout("FilterChart", "component_id")
+    ui = UILayout("SimpleChart")
     ui.add_chart(create_datatable(df))
     return ui
 

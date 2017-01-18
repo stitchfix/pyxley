@@ -48,8 +48,6 @@ It simply looks for `bundle.js` using the provided `path_to_static`
 variable and if it can't find the file, it copies it from
 `pyxley.utils.default_static_path`.
 
-Because we will be serving files that are different from the defaults
-we include our own index routing function and flask html template file.
 
 # Run the App
 Run `python project/__init__.py`.
