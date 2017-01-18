@@ -6,9 +6,7 @@ from pyxley.charts.datamaps import DatamapUSA
 
 def make_datamaps_ui(filename):
     # Make a UI
-    ui = UILayout(
-        "FilterChart",
-        "component_id")
+    ui = UILayout("SimpleChart")
 
     df = pd.read_csv(filename)
     df.month = df.month.astype('str')

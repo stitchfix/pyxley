@@ -3,4 +3,4 @@ This example shows off the map featured in the MultiThreaded Blog: [The Most Col
 
 
 # How to Run
-Run `python demo/__init__.py`.
+Run `python project/__init__.py`.
