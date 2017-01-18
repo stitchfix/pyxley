@@ -48,10 +48,26 @@ Currently this app will render the following layouts:
     * `ApiButton`  
     * `SliderInput`  
     * `DownloadButton`  
+    * `ReactSelect`  
 
-2. Metricsgraphics (from `pyxley.charts.mg`)  
-    * `LineChart`  
-    * `Histogram`  
+2. Metricsgraphics (from `pyxley.charts.mg`)   
+    * `LineChart`   
+    * `Histogram`   
+    * `ScatterPlot`    
+
+3. Plotly (from `pyxley.charts.plotly`)  
+    * `PlotlyAPI.line_plot`  
+
+4. Datamaps (from `pyxley.charts.datamaps`)  
+    * `DatamapUSA`
+
+5. DataTables (from `pyxley.charts.datatables`)  
+    * `DataTable`  
+
+6. NVD3 from (from `pyxley.charts.nvd3`)  
+    * `TwoAxisFocus`  
+    * `PieChart`  
+
 
 More layouts will be added in the future.
 
