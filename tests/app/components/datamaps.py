@@ -6,9 +6,7 @@ from pyxley.charts.datamaps import DatamapUSA
 
 def make_datamaps_ui():
     # Make a UI
-    ui = UILayout(
-        "PyxleyChart",
-        "component_id")
+    ui = UILayout("PyxleyChart")
 
     datafile = "../examples/datamaps/project/Colorful_State.csv"
     df = pd.read_csv(datafile)

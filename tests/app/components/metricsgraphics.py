@@ -60,9 +60,7 @@ def make_mg_layout():
     df = pd.read_csv(filename)
 
     # Make a UI
-    ui = UILayout(
-        "FilterChart",
-        "component_id")
+    ui = UILayout("FilterChart")
 
     # Make a Button
     cols = [c for c in df.columns if c != "Date"]
