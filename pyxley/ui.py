@@ -116,7 +116,7 @@ class UILayout(object):
             component_id (str): html element id.
 
     """
-    def __init__(self, layout, component_id, src_file='pyxley'):
+    def __init__(self, layout, component_id="component_id", src_file='pyxley'):
 
         self.layout = layout
         self.src_file = src_file

@@ -4,7 +4,7 @@ from flask import Flask, render_template
 DEFAULT_HTML_PARAMS = {
     "page_scripts": ["bundle.js"],
     "base_scripts": [],
-    "css": ["./css.main.css"],
+    "css": ["./css/main.css"],
     "title": "Pyxley"
 }
 
