@@ -60,7 +60,7 @@ class PieChart(NVD3):
         if df.empty:
             return {"data": []}
 
-        sum_ = np.sum([df[c].iloc[0] for c in values])
+        sum_ = float(np.sum([df[c].iloc[0] for c in values]))
         for c in values:
             records.append({
                 "label": values[c],

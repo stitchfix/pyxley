@@ -1,4 +1,40 @@
 from .react_template import ReactComponent
+from collections import OrderedDict
+from flask import jsonify
+
+def register_layouts(layouts, app, url="/api/props/", brand="Pyxley"):
+    """ register UILayout with the flask app
+
+        create a function that will send props for each UILayout
+
+        Args:
+            layouts (dict): dict of UILayout objects by name
+            app (object): flask app
+            url (string): address of props; default is /api/props/
+    """
+    def props(name):
+        if name not in layouts:
+            name = layouts.keys()[0]
+        return jsonify({"layouts": layouts[name]["layout"]})
+
+    def apps():
+        paths = []
+        for i, k in enumerate(layouts.keys()):
+            if i == 0:
+                paths.append({
+                    "path": "/",
+                    "label": layouts[k].get("title", k)
+                })
+
+            paths.append({
+                "path": "/"+k,
+                "label": layouts[k].get("title", k)
+            })
+
+        return jsonify({"brand": brand, "navlinks": paths})
+
+    app.add_url_rule(url+"<string:name>/", view_func=props)
+    app.add_url_rule(url, view_func=apps)
 
 class UIComponent(object):
     """Base React UI component.
@@ -32,6 +68,7 @@ class UIComponent(object):
         app.add_url_rule(self.params["options"]["url"],
             self.params["options"]["url"],
             self.route_func)
+
 
 class SimpleComponent(object):
     """Simple class for rendering a single component.
@@ -77,26 +114,23 @@ class UILayout(object):
             layout (str): name of react component to render.
             src_file (str): location of javascript containing the component.
             component_id (str): html element id.
-            dynamic (bool): whether or not to have dynamic buttons
-            filter_style (str): css for filters
 
     """
-    def __init__(self, layout, src_file, component_id, dynamic=True,
-        filter_style="'btn-group'"):
-        
+    def __init__(self, layout, component_id="component_id", src_file='pyxley'):
+
         self.layout = layout
         self.src_file = src_file
         self.component_id = component_id
-        self.filter_style = filter_style
-        self.filters = []
+        self.filters = OrderedDict()
         self.charts = []
-        self.dynamic = dynamic
 
-    def add_filter(self, component):
+    def add_filter(self, component, filter_group="pyxley-filter"):
         """Add a filter to the layout."""
         if getattr(component, "name") != "Filter":
             raise Exception("Component is not an instance of Filter")
-        self.filters.append(component)
+        if filter_group not in self.filters:
+            self.filters[filter_group] = []
+        self.filters[filter_group].append(component)
 
     def add_chart(self, component):
         """Add a chart to the layout."""
@@ -108,19 +142,21 @@ class UILayout(object):
         """Build the props dictionary."""
         props = {}
         if self.filters:
-            props["filters"] = [f.params for f in self.filters]
+            props["filters"] = {}
+            for grp in self.filters:
+                props["filters"][grp] = [f.params for f in self.filters[grp]]
         if self.charts:
             props["charts"] = [c.params for c in self.charts]
 
-        props["dynamic"] = self.dynamic
-        props["filter_style"] = self.filter_style
+        props["type"] = self.layout
         return props
 
     def assign_routes(self, app):
         """Register routes with the app."""
-        for f in self.filters:
-            if f.route_func:
-                f.register_route(app)
+        for grp in self.filters:
+            for f in self.filters[grp]:
+                if f.route_func:
+                    f.register_route(app)
 
         for c in self.charts:
             if c.route_func:

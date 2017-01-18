@@ -1,0 +1,4 @@
+include assets/bundle.js
+include assets/templates/index.html
+include assets/css/main.css
+include LICENSE.txt

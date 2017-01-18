@@ -1,0 +1,32 @@
+{
+  "name": "PyxleyApp",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node_modules/.bin/webpack",
+    "build-prod": "node_modules/.bin/webpack --optimize-minimize"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.5.0",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "d3": "3.5.5",
+    "datamaps": "0.4.4",
+    "datatables": "^1.10.7",
+    "jquery": "^2.2.0",
+    "metrics-graphics": "^2.8.0",
+    "node-sass": "^3.3.3",
+    "nvd3": "^1.8.2",
+    "react": "^15.4.0",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.0",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.13"
+  },
+  "dependencies": {}
+}

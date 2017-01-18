@@ -2,17 +2,11 @@
 This example showcases the integration of the [metricsgraphics.js](http://metricsgraphicsjs.org/)
 library for time-series data.
 
-# How to Install
-Make sure pyxley is installed first (run `python setup.py install`).
-
-## NPM
-Install NPM (e.g brew install node).
-
-## `pyxapp`
-With the latest version of Pyxley comes a command line helper.
-
-Type `pyxapp --init .` to initialize the folder. It will install
-all of the dependencies in `package.json`.
-
 # Flask
-Run `python project/app.py`.
+Run `python project/__init__.py`.
+
+# What's in here
+This app demonstrates how to use the metrics-graphics wrappers.
+
+Each chart is defined in the `project/buildui.py` file. The charts
+are then assembled into a layout in `buildui.get_layouts`.

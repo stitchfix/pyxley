@@ -2,18 +2,8 @@
 This example shows off the integration of the [DataTables](https://www.datatables.net/) jQuery plug-in. In addition, we are able to use d3 to render intervals. The data comes from the DataTables examples on their website.
 
 ## What's In Here?
-While this example uses the DataTables.js library, it is
-meant to highlight two capabilities:
 
-1. How to use the `SingleComponent` class  
-2. Including additional JavaScript for DataTables callbacks  
-
-The `SingleComponent` class is meant to be used when there
-are no need for filters. In the other apps, we bind an
-entire layout to a single `div` element. Instead, we will bind
-only a single Pyxley component.
-
-In addition, this example showcases the flexibility of the
+This example showcases the flexibility of the
 DataTables api. It accepts callback functions that allow us
 to include other functionality. This example uses the
 `FixedColumns` extension as well as additional `svg` rendering
@@ -39,19 +29,25 @@ In the string, we call the function that initializes the
 `FixedColumns` extension and we call the d3 rendering
 function that draws confidence intervals.
 
-# Installing 
-Make sure pyxley is installed first (run `python setup.py install`).
+## Static Files
+In this example, we need to include some additional javascript files.
+Rather than serving the default static directory, we are going to
+copy the pyxley bundle into our own static folder. This is achieved
+with the following code:
 
-## NPM
-Install NPM (e.g brew install node).
+```python
+import shutil
+def check_for_bundle(path_to_static):
+    # check if bundle.js exists
+    if not path.isfile(path_to_static+"/bundle.js"):
+        # grab the bundle
+        _path_to_bundle = default_static_path() + "/bundle.js"
+        shutil.copy2(_path_to_bundle, path_to_static)
+```
+It simply looks for `bundle.js` using the provided `path_to_static`
+variable and if it can't find the file, it copies it from
+`pyxley.utils.default_static_path`.
 
-## Webpack
-This app has a custom webpack file. Rather than building
-the `webpack.config.js` the app uses the one in the top-level
-folder.
 
-Simple install the `node_modules` with
-`npm install`
-
-# Flask
-Run `python project/app.py`.
+# Run the App
+Run `python project/__init__.py`.

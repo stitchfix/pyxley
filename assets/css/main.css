@@ -1,0 +1,65 @@
+
+.pyx-slider {
+  width: 200px !important;
+}
+
+.pyDataMap {
+    position: middle;
+    height: 500px;
+    width: 800px;
+  }
+
+body {
+  font-style:normal;
+  font-family:"BrandonText-Regular", sans-serif;
+}
+
+.container {
+    width: 90% !important;
+}
+
+.navbar-collapse {
+  overflow: hidden;
+}
+
+#mg_line_plot {
+  display: inline-block;
+}
+
+#mg_histogram {
+  display: inline-block;
+}
+
+.mg-line1-color {
+    stroke: #7bc9c1 !important;
+}
+
+.mg-area1-color {
+    fill: #7bc9c1 !important;
+}
+
+.mg-histogram .mg-bar rect.active {
+    fill: #7bc9c1 !important;
+}
+
+.mg-histogram .mg-bar rect {
+    fill:  #7bc9c1 !important;
+    shape-rendering: auto !important;
+}
+
+
+.mg-x-axis text,
+.mg-y-axis text,
+.mg-histogram .axis text {
+    fill: black;
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+.mg-x-axis .label,
+.mg-y-axis .label,
+.mg-axis .label {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}

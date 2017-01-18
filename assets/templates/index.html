@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+
+  <head>
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% for s in css %}
+    <link href={{ url_for('static', filename=s) }} rel="stylesheet" media="screen">
+    {% endfor %}
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  </head>
+
+  <body>
+
+    {% for s in base_scripts %}
+    <script src={{ url_for('static', filename=s) }}></script>
+    {% endfor %}
+
+    <div class="app">
+          <div id="component_id"></div>
+    </div>
+
+    {% for s in page_scripts %}
+    <script src={{ url_for('static', filename=s) }}></script>
+    {% endfor %}
+
+  </body>
+</html>
