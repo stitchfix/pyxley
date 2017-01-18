@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row, Col} from 'react-bootstrap';
+import {Row, Col, Grid} from 'react-bootstrap';
 import {Filter, Chart} from 'pyxley';
 
 
@@ -45,18 +45,19 @@ class PyxleyChart extends React.Component {
     }
 
 
-    get_filters(prop_filters) {
+    get_filters(prop_filters, group_name) {
         let filters = [];
         if (prop_filters.length > 0) {
             filters = prop_filters.map(function(x, index){
                 return (
-                    <div key={'div_filter_'.concat(index)}>
+                    <div
+                        key={'div_filter_'.concat(index)}
+                        className={group_name}>
                     {x.label ? <h2>{x.label}</h2> : null}
                     <Filter
                         ref={'filter_'.concat(index)}
                         id={'filter_'.concat(index)}
                         onChange={this._handleClick.bind(this)}
-                        dynamic={true}
                         type={x.type}
                         options={x.options}/>
                     <br/>
@@ -86,11 +87,17 @@ class PyxleyChart extends React.Component {
 
     render(){
 
-        let filters = this.get_filters(this.props.filters);
+        let filters = [];
+        for( let _filter in this.props.filters) {
+            filters.push(this.get_filters(
+                this.props.filters[_filter], _filter
+            ));
+        }
+
         let charts = this.get_charts(this.props.charts);
 
         return (
-            <div>
+            <Grid>
                 <Col xs={6} md={2}>
                     {filters}
                 </Col>
@@ -98,13 +105,10 @@ class PyxleyChart extends React.Component {
                 <Col xs={12} md={10}>
                     {charts}
                 </Col>
-            </div>
+            </Grid>
             );
     }
 
 }
 
-PyxleyChart.contextTypes = {
-    router: React.PropTypes.object
-};
 export {PyxleyChart};

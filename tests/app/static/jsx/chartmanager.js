@@ -1,6 +1,9 @@
 import React from 'react';
-import {Row} from 'react-bootstrap';
+import {Row, Grid} from 'react-bootstrap';
 import {PyxleyChart} from './pyxleychart';
+import {Layout, LayoutFactory} from 'pyxley';
+
+LayoutFactory.PyxleyChart = PyxleyChart;
 
 class ChartManager extends React.Component {
 
@@ -9,27 +12,34 @@ class ChartManager extends React.Component {
     }
 
     render() {
+
         let components = [];
         if (this.props.layouts.length > 0) {
             components = this.props.layouts.map(function(x, index) {
                 return (
+
                     <Row key={'chart_row_'.concat(index)}>
                     <h1>{x.title}</h1>
-                    <PyxleyChart
+                    <Layout
                         id={'pyxley_chart_'.concat(index)}
                         key={'pyxley_chart_'.concat(index)}
+                        layout_factory={LayoutFactory}
+                        type={x.type}
                         filters={x.filters}
                         charts={x.charts} />
                     <br/>
                     </Row>
+
 
                 );
             }.bind(this));
         }
 
         return (
-            <div id={'chart_manager_base'}>
+            <div>
+            <Grid id={'chart_manager_base'}>
                 {components}
+            </Grid>
             </div>
         );
     }

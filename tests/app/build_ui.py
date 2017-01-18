@@ -1,8 +1,13 @@
 from components.filters import *
 from components.metricsgraphics import make_mg_layout
 from components.plotly import make_plotly_ui
+from components.datamaps import make_datamaps_ui
+from components.datatables import make_table_layout
+from components.nvd3 import make_nv_layout
 
-from pyxley import UILayout
+from collections import OrderedDict
+
+from pyxley import UILayout, register_layouts
 
 def build_filter_props(buttons):
     """ build filter props
@@ -13,8 +18,7 @@ def build_filter_props(buttons):
             buttons (list): list of pyxley.Filter components.
     """
     ui = UILayout(
-        "FilterChart",
-        "pyxley",
+        "PyxleyChart",
         "component_id")
 
     for b in buttons:
@@ -33,8 +37,11 @@ def get_filter_props():
     _props = build_filter_props(_buttons)
 
     # let's add a label to each of the filters
-    for p in _props["filters"]:
-        p["label"] = p["type"]
+
+    for grp in _props["filters"]:
+        _filters = _props["filters"][grp]
+        for p in _filters:
+            p["label"] = p["type"]
 
     return _props
 
@@ -57,9 +64,30 @@ def get_layouts(mod):
     plotly_props = plotly_ui.build_props()
     plotly_props["title"] = "Plotly.js"
 
+    # datamaps
+    dm_ui = make_datamaps_ui()
+    dm_ui.assign_routes(mod)
+    dm_props = dm_ui.build_props()
+    dm_props["title"] = "Datamaps"
 
-    return [
-        filters_only,
-        mg_props,
-        plotly_props
-    ]
+    # datatables
+    dt_ui = make_table_layout()
+    dt_ui.assign_routes(mod)
+    dt_props = dt_ui.build_props()
+    dt_props["title"] = "Datatables"
+
+    # nvd3
+    nv_ui = make_nv_layout()
+    nv_ui.assign_routes(mod)
+    nv_props = nv_ui.build_props()
+    nv_props["title"] = "NVD3"
+
+    _layouts = OrderedDict()
+    _layouts["filters"] = {"layout": [filters_only], "title": "Filters"}
+    _layouts["mg"] = {"layout": [mg_props], "title": "metrics-graphics"}
+    _layouts["plotly"] = {"layout": [plotly_props], "title": "Plotly"}
+    _layouts["datamaps"] = {"layout": [dm_props], "title": "Datamaps"}
+    _layouts["datatables"] = {"layout": [dt_props], "title": "Datatables"}
+    _layouts["nvd3"] = {"layout": [nv_props], "title": "NVD3"}
+
+    register_layouts(_layouts, mod)

@@ -1,10 +1,25 @@
 
 import {Navbar, NavItem, Nav} from 'react-bootstrap';
-import {LinkContainer} from 'react-router-bootstrap';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Navs extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            pages: []
+        };
+    }
+
+    componentWillMount() {
+        let url = "/api/props/";
+        $.get(url, function(result){
+            this.setState({
+                pages: result.pages
+            })
+        }.bind(this));
+    }
+
     render() {
         return (
             <Navbar>
@@ -14,12 +29,17 @@ class Navs extends React.Component {
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav pullRight>
-                   <LinkContainer to={{pathname: "/"}}>
-                       <NavItem eventKey={1}>Charts</NavItem>
-                   </LinkContainer>
+                   <NavItem eventKey={1} href="filters">Filters</NavItem>
+                   <NavItem eventKey={1} href="mg">metrics-graphics</NavItem>
+                   <NavItem eventKey={1} href="plotly">Plotly</NavItem>
                 </Nav>
             </Navbar>
         )
     }
 }
-export {Navs};
+// export {Navs};
+
+ReactDOM.render(
+  <Navs/>,
+  document.getElementById("nav_bar_id")
+);

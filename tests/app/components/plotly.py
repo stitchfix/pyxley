@@ -12,11 +12,8 @@ def make_plotly_ui():
 
     # Make a UI
     ui = UILayout(
-        "FilterChart",
-        "pyxley",
-        "component_id",
-        filter_style="''")
-
+        "PyxleyChart",
+        "component_id")
 
     # Read in the data and stack it, so that we can filter on columns
     _stack = df.set_index("Date").stack().reset_index()

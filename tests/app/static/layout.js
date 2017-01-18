@@ -1,26 +1,41 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
-import {Navs} from './jsx/navbar';
+import {Navs} from 'pyxley';
 import {ChartManager} from './jsx/chartmanager';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            layouts: []
+            layouts: [],
+            navlinks: [],
+            brand: ""
         };
     }
 
-    componentWillMount() {
-
-        let url = "/api/props/";
-        $.get(url, function(result){
+    get_layout() {
+        let path = window.location.pathname.replace("/", "");
+        path = path.length > 0 ? path : "antiquing";
+        $.get(this.props.url.concat(path, "/"), function(result){
             this.setState({
                 layouts: result.layouts
             })
         }.bind(this));
+    }
+
+    get_paths() {
+        $.get(this.props.url, function(result){
+            this.setState({
+                navlinks: result.navlinks,
+                brand: result.brand
+            })
+        }.bind(this));
+    }
+
+    componentWillMount() {
+        this.get_layout();
+        this.get_paths();
     }
 
     render() {
@@ -30,9 +45,10 @@ class App extends React.Component {
             React.Children.only(children),
             this.state
         )
+
         return (
             <div>
-            <Navs/>
+            <Navs navlinks={this.state.navlinks} brand={this.state.brand} />
             <div className="container">{child}</div>
             </div>
         )
@@ -40,12 +56,13 @@ class App extends React.Component {
     }
 }
 
+App.defaultProps = {
+    url: "/api/props/"
+}
 
 ReactDOM.render(
-  <Router history={ browserHistory }>
-    <Route path='/' component={App}>
-        <IndexRoute component={ChartManager}/>
-    </Route>
-  </Router>,
+  <App>
+    <ChartManager />
+  </App>,
   document.getElementById("component_id")
 );

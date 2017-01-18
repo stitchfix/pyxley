@@ -62,9 +62,7 @@ def make_mg_layout():
     # Make a UI
     ui = UILayout(
         "FilterChart",
-        "pyxley",
-        "component_id",
-        filter_style="''")
+        "component_id")
 
     # Make a Button
     cols = [c for c in df.columns if c != "Date"]

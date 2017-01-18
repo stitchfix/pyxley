@@ -1,38 +1,30 @@
 import pkg_resources
 
 from os import environ, path
-from flask import Flask, render_template, send_from_directory
+from pyxley.utils import create_app
 from flask import jsonify
 import pandas
 
 from build_ui import get_layouts
 
 here = path.abspath(path.dirname(__file__))
-
-
-app = Flask(__name__)
+path_to_static = here + "/static"
+path_to_tempates = here + "/templates"
+html_params = {
+    "page_scripts": ["./bundle.js"],
+    "base_scripts": ["./conf_int.js"],
+    "css": ["./css/main.css"],
+    "title": "Pyxley Tests"
+}
+app = create_app(here, path_to_static, path_to_tempates,
+    index_params=html_params)
 
 # add the blueprint
 from components.helpers import get_mod
 _mod = get_mod()
-_LAYOUTS = get_layouts(_mod)
+get_layouts(_mod)
 
 app.register_blueprint(_mod)
-
-
-@app.route("/api/props/", methods=["GET"])
-def props():
-    return jsonify({
-        "layouts": _LAYOUTS
-        })
-
-@app.route("/", methods=["GET"])
-def index():
-    return render_template('index.html',
-        page_scripts=["./bundle.js"],
-        base_scripts=[],
-        css=["./css/main.css"],
-        title="Pyxley Tests")
 
 if __name__ == "__main__":
     app.run(debug=True)

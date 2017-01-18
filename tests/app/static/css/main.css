@@ -1,3 +1,12 @@
+#nvd3_focus svg {
+  height: 400px;
+  width: 100%;
+}
+
+#piechart svg {
+  height: 400px;
+  width: 400px;
+}
 
 .pyx-slider {
   width: 200px !important;
