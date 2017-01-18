@@ -9,7 +9,7 @@ def make_ui(filename):
     df = pd.read_csv(filename)
 
     # Make a UI
-    ui = UILayout("FilterChart", "component_id")
+    ui = UILayout("FilterChart")
 
     # Read in the data and stack it, so that we can filter on columns
     _stack = df.set_index("Date").stack().reset_index()
