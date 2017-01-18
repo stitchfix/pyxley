@@ -39,6 +39,7 @@
               }
             ]
         },
+
         plugins: [
                 new webpack.ProvidePlugin({
                   $: "jquery",
@@ -46,7 +47,7 @@
                   d3: "d3",
                   MG: "metrics-graphics",
                   Datamap: "datamaps",
-                  Plotly: "plotly.js",
+                //   Plotly: "plotly.js",
                   nv: "nvd3"
                 })
             ]

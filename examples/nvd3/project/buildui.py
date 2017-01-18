@@ -43,7 +43,7 @@ def make_nv_layout(filename):
     # load the data
     df = pd.read_csv(filename)
 
-    ui = UILayout("FilterChart", "component_id")
+    ui = UILayout("FilterChart")
 
     # Make a button
     choices = ["Heart Rate", "Pace", "Distance"]
