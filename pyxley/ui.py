@@ -14,7 +14,8 @@ def register_layouts(layouts, app, url="/api/props/", brand="Pyxley"):
     """
     def props(name):
         if name not in layouts:
-            name = layouts.keys()[0]
+            # cast as list for python3
+            name = list(layouts.keys())[0]
         return jsonify({"layouts": layouts[name]["layout"]})
 
     def apps():
