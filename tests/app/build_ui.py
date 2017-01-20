@@ -17,9 +17,7 @@ def build_filter_props(buttons):
         Args:
             buttons (list): list of pyxley.Filter components.
     """
-    ui = UILayout(
-        "PyxleyChart",
-        "component_id")
+    ui = UILayout("PyxleyChart")
 
     for b in buttons:
         ui.add_filter(b)
