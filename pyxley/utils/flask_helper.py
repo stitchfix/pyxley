@@ -4,7 +4,7 @@ from flask import Flask, render_template
 DEFAULT_HTML_PARAMS = {
     "page_scripts": ["bundle.js"],
     "base_scripts": [],
-    "css": ["./css/main.css"],
+    "css": ["main.css"],
     "title": "Pyxley"
 }
 
@@ -40,4 +40,4 @@ def default_template_path():
         Return the path to the index.html
     """
     fdir = os.path.dirname(__file__)
-    return os.path.abspath(os.path.join(fdir, '../../assets/templates/'))
+    return os.path.abspath(os.path.join(fdir, '../../assets/'))
