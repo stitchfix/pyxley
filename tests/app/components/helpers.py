@@ -1,7 +1,10 @@
 from flask import make_response
 from pandas import DataFrame
 from flask import Blueprint, jsonify
-from StringIO import StringIO
+try:
+    from StringIO import StringIO
+except:
+    from io import StringIO
 
 from pyxley.filters import ReactSelect
 
