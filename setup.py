@@ -24,14 +24,12 @@ setup(
         "bin/pyxapp"
     ],
     package_data = {
-        'pyxley': ['LICENSE.txt', 'assets/bundle.js', 'assets/templates/index.html']
+        'pyxley': [
+            'LICENSE.txt',
+            'pyxley/assets/bundle.js',
+            'pyxley/assets/templates/index.html',
+            'pyxley/assets/css/main.css'
+        ]
     },
-    data_files=[
-        ('assets', [
-            'assets/bundle.js',
-            'assets/templates/index.html',
-            'assets/css/main.css'
-        ])
-    ],
     include_package_data=True
 )
