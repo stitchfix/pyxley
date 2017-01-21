@@ -33,11 +33,11 @@ def default_static_path():
         Return the path to the javascript bundle
     """
     fdir = os.path.dirname(__file__)
-    return os.path.abspath(os.path.join(fdir, '../../assets/'))
+    return os.path.abspath(os.path.join(fdir, '../assets/'))
 
 def default_template_path():
     """
         Return the path to the index.html
     """
     fdir = os.path.dirname(__file__)
-    return os.path.abspath(os.path.join(fdir, '../../assets/'))
+    return os.path.abspath(os.path.join(fdir, '../assets/'))
