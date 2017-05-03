@@ -142,6 +142,7 @@ we rely on ``webpack``. We have written a wrapper for ``webpack`` that does
 the bundling for us.
 
 ::
+
     sb = ui.render_layout(app, "./project/static/layout.js")
 
     # Create a webpack file and bundle our javascript
