@@ -18,7 +18,7 @@
     "d3": "3.5.5",
     "datamaps": "0.4.4",
     "datatables": "^1.10.7",
-    "jquery": "^2.2.0",
+    "jquery": "^3.0.0",
     "metrics-graphics": "^2.8.0",
     "node-sass": "^3.3.3",
     "nvd3": "^1.8.5",
